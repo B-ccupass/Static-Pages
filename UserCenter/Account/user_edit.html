@@ -26,19 +26,19 @@
 					</div>
 					<div class="email m-2">
 						<label class="d-block fs-6 fw-bolder mb-1" for="">Email</label>
-						<input type="text" placeholder="請輸入Email" class="col-12 fs-6 px-1 py-2">
+						<input type="text" placeholder="請輸入Email" class="col-12 fs-6 px-1 py-2" name="email">
 					</div>
 					<div class="password m-2">
 						<div class="mb-1 fs-6 fw-bolder">密碼</div>
-						<button class="changepassword btn btn-primary">變更密碼</button>
+						<button class="changepwd btn btn-primary">變更密碼</button>
 					</div>
 					<div class="nickname m-2">
-						<label class="d-block mb-1 fs-6 fw-bolder" for="">顯示名稱</label>
-						<input type="text" placeholder="你希望被怎麼稱呼" class="col-12 fs-6 px-1 py-2">
+						<label class="d-block mb-1 fs-6 fw-bolder" for="nickname">顯示名稱</label>
+						<input type="text" id="nickname" placeholder="你希望被怎麼稱呼" class="col-12 fs-6 px-1 py-2">
 					</div>
 					<div class="name m-2">
-						<label class="d-block mb-1 fs-6 fw-bolder" for="">姓名</label>
-						<input type="text" name="" id="" placeholder="請輸入姓名" class="col-12 fs-6 px-1 py-2">
+						<label class="d-block mb-1 fs-6 fw-bolder" for="name">姓名</label>
+						<input type="text" name="" id="name" placeholder="請輸入姓名" class="col-12 fs-6 px-1 py-2">
 					</div>
 					<div class="birthday m-2">
 						<label class="d-block mb-1 fs-6 fw-bolder" for="date">生日</label>
@@ -47,28 +47,36 @@
 					</div>
 					<div class="gender m-2">
 						<div class="mb-1 fs-6 fw-bolder">性別</div>
-						<button value="Male" class="btn btn-primary rounded-pill px-3 py-0 me-2">男</button>
-						<button value="Female" class="btn btn-primary rounded-pill px-3 py-0 me-2">女</button>
-						<button value="diversity" class="btn btn-primary rounded-pill px-3 py-0 me-2">多元</button>
+						<button value="Male" name="gender"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">男</button>
+						<button value="Female" name="gender"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">女</button>
+						<button value="diversity" name="gender"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">多元</button>
 					</div>
 					<div class="relationship m-2">
 						<div class="mb-1 fs-6 fw-bolder">感情狀態</div>
-						<button value="in_relationship"
+						<button name="relationship" value="in_relationship"
 							class="btn btn-primary rounded-pill px-3 py-0 me-2">穩定交往</button>
-						<button value="married" class="btn btn-primary rounded-pill px-3 py-0 me-2">已婚</button>
-						<button value="single" class="btn btn-primary rounded-pill px-3 py-0">單身</button>
+						<button value="married" name="relationship"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">已婚</button>
+						<button value="single" name="relationship"
+							class="btn btn-primary rounded-pill px-3 py-0">單身</button>
 					</div>
 					<div class="identity m-2">
 						<div class="mb-1 fs-6 fw-bolder">你的身分</div>
 						<div class="choose">
-							<button value="student" class="btn btn-primary rounded-pill px-3 py-0 me-2">學生</button>
-							<button value="society" class="btn btn-primary rounded-pill px-3 py-0 me-2">社會人士</button>
-							<button value="retired" class="btn btn-primary rounded-pill px-3 py-0 me-2">已退休</button>
+							<button value="student" name="identity"
+								class="btn btn-primary rounded-pill px-3 py-0 me-2">學生</button>
+							<button value="society" name="identity"
+								class="btn btn-primary rounded-pill px-3 py-0 me-2">社會人士</button>
+							<button value="retired" name="identity"
+								class="btn btn-primary rounded-pill px-3 py-0 me-2">已退休</button>
 						</div>
 					</div>
 					<div class="job m-2">
 						<div class="mb-1 fs-6 fw-bolder">職業</div>
-						<select name="" id="" class="col-12 fs-6 px-1 py-2 mb-2">
+						<select name="job" id="" class="col-12 fs-6 px-1 py-2 mb-2">
 							<option value="">請選擇行業別</option>
 							<option value="trafic">交通 / 物流 / 倉儲</option>
 							<option value="build">營造 / 建築</option>
@@ -93,23 +101,24 @@
 							<option value="soho">自由接案者</option>
 							<option value="student">學生</option>
 						</select>
-						<input type="text" placeholder="公司名稱" class="col-12 fs-6 px-1 py-2 mb-2">
-						<input type="text" placeholder="職稱" class="col-12 fs-6 px-1 py-2">
+						<input type="text" name="company" placeholder="公司名稱" class="col-12 fs-6 px-1 py-2 mb-2">
+						<input type="text" name="title" placeholder="職稱" class="col-12 fs-6 px-1 py-2">
 					</div>
 					<div class="education m-2">
 						<label class="d-block mb-1 fs-6 fw-bolder" for="">最高學歷</label>
-						<input type="text" placeholder="學校名稱" class="col-12 fs-6 px-1 py-2 mb-2">
-						<input type="text" placeholder="科系" class="col-12 fs-6 px-1 py-2">
+						<input name="school" type="text" placeholder="學校名稱" class="col-12 fs-6 px-1 py-2 mb-2">
+						<input name="department" type="text" placeholder="科系" class="col-12 fs-6 px-1 py-2">
 					</div>
 					<div class="phone m-2 ">
-						<label class="d-block mb-1 fs-6 fw-bolder" for="">手機號碼</label>
-						<input class="col-12 px-1 py-2" type="text" placeholder="請輸入手機號碼">
+						<label for="phone" class="d-block mb-1 fs-6 fw-bolder" for="">手機號碼</label>
+						<input name="mobile" id="phone" class="col-12 px-1 py-2" type="text" placeholder="請輸入手機號碼">
 					</div>
 					<div class="address m-2 d-flex flex-wrap">
 						<label class="d-block mb-1 fs-6 fw-bolder col-12" for="">現居地</label>
-						<select name="" id="city" class="d-block mb-2 fs-6 px-1 py-2 me-lg-2"></select>
-						<select name="" id="district" class="d-block mb-2 fs-6 px-1 py-2"></select>
-						<input type="text" placeholder="詳細地址" class="col-12 fs-6 px-1 py-2 d-block mb-2">
+						<select name="city" id="city" class="d-block mb-2 fs-6 px-1 py-2 me-lg-2"></select>
+						<select name="district" id="district"
+							class="d-block mb-2 fs-6 px-1 py-2 visually-hidden"></select>
+						<input name="address" type="text" placeholder="詳細地址" class="col-12 fs-6 px-1 py-2 d-block mb-2">
 					</div>
 					<div class="comfirm d-flex flex-row-reverse fixed-bottom ">
 						<input type="submit" value="儲存" class="col-6 col-lg-1 btn-primary border border-primary">
@@ -135,7 +144,19 @@
 
 		window.onload = function () {
 			getFetch()
+			citySelect.onchange = function () {
+				districtSelect.length = 0;
+				createDistrictSelect()
+				const selectedCity = citySelect.value
+				DistrictArray = [""].concat(CityArray.find(x => x.CityName == selectedCity).AreaList.map(x => `${x.ZipCode} ${x.AreaName}`))
+				setDistrictSelect()
+				DistrictArray=[""]
+				setUI()
+			}
 
+			districtSelect.onchange = function(){
+				setUI()
+			}
 		}
 
 		//function
@@ -144,17 +165,35 @@
 				.then(res => res.json())
 				.then(data => {
 					CityArray = [{ CityName: "", AreaList: [] }].concat(data)
+					DistrictArray = [""]
 					setCitySelect()
 					setDistrictSelect()
+					setUI()
 				})
-				.catch(ex=>{console.warnq(ex)})
+				.catch(ex => { console.warn(ex) })
 		}
 
-		function setCitySelect(){
-			
+		function setCitySelect() {
+			CityArray.forEach(city => {
+				let cityOption = document.createElement("option")
+				cityOption.innerText = city.CityName == "" ? "請選擇縣市" : city.CityName
+				cityOption.value = city.CityName
+				citySelect.appendChild(cityOption)
+			})
 		}
 
+		function createDistrictSelect() {
+			districtSelect.classList.remove("visually-hidden")
+		}
 
+		function setDistrictSelect() {
+			DistrictArray.forEach(district => {
+				let districtOption = document.createElement("option")
+				districtOption.innerText = district == "" ? "請選擇行政區" : district
+				districtOption.value = district
+				districtSelect.appendChild(districtOption)
+			})
+		}
 
 
 	</script>
