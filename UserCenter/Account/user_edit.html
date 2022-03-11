@@ -113,7 +113,7 @@
 						<label for="phone" class="d-block mb-1 fs-6 fw-bolder" for="">手機號碼</label>
 						<input name="mobile" id="phone" class="col-12 px-1 py-2" type="text" placeholder="請輸入手機號碼">
 					</div>
-					<div class="address m-2 d-flex flex-wrap">
+					<div class="address m-2 d-flex flex-wrap justify-content-between justify-content-lg-start">
 						<label class="d-block mb-1 fs-6 fw-bolder col-12" for="">現居地</label>
 						<select name="city" id="city" class="d-block mb-2 fs-6 px-1 py-2 me-lg-2"></select>
 						<select name="district" id="district"
@@ -122,8 +122,7 @@
 					</div>
 					<div class="comfirm d-flex flex-row-reverse fixed-bottom ">
 						<input type="submit" value="儲存" class="col-6 col-lg-1 btn-primary border border-primary">
-						<button
-							class="col-6 col-lg-1  btn-white border border-secondary text-secondary me-lg-3 bg-white">捨棄變更</button>
+						<button class="col-6 col-lg-1  btn-white border border-secondary text-secondary me-lg-3 bg-white">捨棄變更</button>
 					</div>
 				</form>
 			</div>
@@ -141,21 +140,22 @@
 		//DOM
 		const citySelect = document.querySelector("#city")
 		const districtSelect = document.querySelector("#district")
+		const btnChangePwd = document.querySelector(".changepwd")
+		const container = document.querySelector(".comfirm")
 
 		window.onload = function () {
 			getFetch()
 			citySelect.onchange = function () {
 				districtSelect.length = 0;
-				createDistrictSelect()
+				showDistrictSelect()
 				const selectedCity = citySelect.value
 				DistrictArray = [""].concat(CityArray.find(x => x.CityName == selectedCity).AreaList.map(x => `${x.ZipCode} ${x.AreaName}`))
 				setDistrictSelect()
 				DistrictArray=[""]
-				setUI()
 			}
 
-			districtSelect.onchange = function(){
-				setUI()
+			btnChangePwd.onclick = function(){
+				changePwd()
 			}
 		}
 
@@ -168,7 +168,6 @@
 					DistrictArray = [""]
 					setCitySelect()
 					setDistrictSelect()
-					setUI()
 				})
 				.catch(ex => { console.warn(ex) })
 		}
@@ -182,7 +181,7 @@
 			})
 		}
 
-		function createDistrictSelect() {
+		function showDistrictSelect() {
 			districtSelect.classList.remove("visually-hidden")
 		}
 
@@ -194,6 +193,12 @@
 				districtSelect.appendChild(districtOption)
 			})
 		}
+
+		// function changePwd(){
+		// 	let verifyPwd = document.createElement("div")
+		// 	verifyPwd.setAttribute("class","modal-dialog modal-dialog-centered fade")
+		// 	container.appendChild(verifyPwd)
+		// }
 
 
 	</script>

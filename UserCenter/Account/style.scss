@@ -12,7 +12,6 @@ $bg-color: #F8FBFF;
 }
 
 .address{
-  justify-content: space-between;
   select{
   width: 49%;
   }
@@ -36,10 +35,6 @@ $bg-color: #F8FBFF;
     button,input{
       border-radius: 5px;
     }
-  }
-
-  .address{
-    justify-content: flex-start;
   }
 }
 
