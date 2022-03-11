@@ -1,5 +1,38 @@
-.pic {
-  width: 25px;
-  height: 25px;
+.pic img {
+  width: 100px;
+  height: auto;
+}
+
+.comfirm {
+  height: 5%;
+}
+
+.address {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.address select {
+  width: 49%;
+}
+
+@media screen and (min-width: 1024px) {
+  .pic img {
+    width: 150px;
+    height: auto;
+  }
+  .comfirm {
+    position: static;
+    height: 40px;
+  }
+  .comfirm button, .comfirm input {
+    border-radius: 5px;
+  }
+  .address {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 /*# sourceMappingURL=style.css.map */
