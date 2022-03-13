@@ -1,3 +1,32 @@
+body {
+  background-color: #F6F8F8;
+}
+
+.activities-list, .create-activity, .everybody-track {
+  max-width: 1080px;
+  margin: 20px auto;
+}
+
+.create-activity .cta-btn {
+  border-radius: 25px;
+  color: #ffffff;
+  background-color: #2C5E9E;
+  border: 1px solid #2C5E9E;
+}
+
+.everybody-track .organizer-img {
+  width: 150px;
+  height: 150px;
+  -webkit-box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("https://static.accupass.com/org/2103240413414437804150.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .activity-card {
   max-width: 540px;
 }
@@ -13,6 +42,7 @@
 }
 
 .activity-card .card {
+  border-radius: 0px;
   margin-bottom: 10px;
 }
 
@@ -69,6 +99,12 @@
   .activity-card .card {
     margin-bottom: 15px;
     height: 280px;
+    -webkit-box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+  .activity-card .card .activity-img {
+    border-radius: 10px 10px 0 0;
   }
   .activity-card .card .col:nth-of-type(1) {
     height: 150px;
@@ -78,6 +114,7 @@
 @media screen and (min-width: 1024px) {
   .activity-card .card {
     font-size: 14px;
+    height: 320px;
   }
   .activity-card .card .col:nth-of-type(1) {
     height: 160px;
@@ -92,15 +129,6 @@
   }
   .activity-card .card-icon:before {
     font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .activity-card .card {
-    height: 320px;
-  }
-  .activity-card .card .col:nth-of-type(1) {
-    height: 160px;
   }
   .activity-card .card-text {
     margin-bottom: 8px;

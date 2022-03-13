@@ -10,6 +10,7 @@
         margin: 0;
     }
     .card{
+        border-radius: 0px;
         margin-bottom: 10px;
         &-title{
             font-size: 16px;
@@ -53,17 +54,22 @@
     }
     @media screen and (min-width: 768px) {
         .card{
+            .activity-img{
+                border-radius: 10px 10px 0 0;
+            }
             margin-bottom: 15px;
             height: 280px;
+            box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
             .col:nth-of-type(1){
                 height: 150px;
             }
         }
     }
-    
     @media screen and (min-width: 1024px) {
         .card{
             font-size: 14px;
+            height: 320px;
             .col:nth-of-type(1){
                 height: 160px;
             }
@@ -77,15 +83,6 @@
             }
             &-icon:before{
                 font-size: 14px;
-            }
-        }
-    }
-    
-    @media screen and (min-width: 1200px) {
-        .card{
-            height: 320px;
-            .col:nth-of-type(1){
-                height: 160px;
             }
             &-text{
                 margin-bottom: 8px;

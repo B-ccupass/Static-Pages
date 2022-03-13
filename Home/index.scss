@@ -3,6 +3,39 @@ $theme-color-light: #5995DD;
 $font-color: #333333;
 $font-color-light: #B2B2B2;
 
+body{
+    background-color: #F6F8F8;
+}
+
+.activities-list, .create-activity, .everybody-track{
+    max-width: 1080px;
+    margin: 20px auto;
+}
+
+.create-activity{
+    .cta-btn{
+        border-radius: 25px;
+        color: #ffffff;
+        background-color: $theme-color;
+        border: 1px solid $theme-color;
+    }
+}
+
+.everybody-track{
+    .organizer-img{
+        width: 150px;
+        height: 150px;
+        box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        overflow: hidden;
+        background-image: url("https://static.accupass.com/org/2103240413414437804150.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+// card
 .activity-card{
     max-width: 540px;
     .activity-img{
@@ -15,6 +48,7 @@ $font-color-light: #B2B2B2;
         margin: 0;
     }
     .card{
+        border-radius: 0px;
         margin-bottom: 10px;
         &-title{
             font-size: 16px;
@@ -58,17 +92,22 @@ $font-color-light: #B2B2B2;
     }
     @media screen and (min-width: 768px) {
         .card{
+            .activity-img{
+                border-radius: 10px 10px 0 0;
+            }
             margin-bottom: 15px;
             height: 280px;
+            box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
             .col:nth-of-type(1){
                 height: 150px;
             }
         }
     }
-    
     @media screen and (min-width: 1024px) {
         .card{
             font-size: 14px;
+            height: 320px;
             .col:nth-of-type(1){
                 height: 160px;
             }
@@ -82,15 +121,6 @@ $font-color-light: #B2B2B2;
             }
             &-icon:before{
                 font-size: 14px;
-            }
-        }
-    }
-    
-    @media screen and (min-width: 1200px) {
-        .card{
-            height: 320px;
-            .col:nth-of-type(1){
-                height: 160px;
             }
             &-text{
                 margin-bottom: 8px;

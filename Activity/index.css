@@ -84,6 +84,7 @@ body {
 }
 
 .activity-card .card {
+  border-radius: 0px;
   margin-bottom: 10px;
 }
 
@@ -140,6 +141,12 @@ body {
   .activity-card .card {
     margin-bottom: 15px;
     height: 280px;
+    -webkit-box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+  .activity-card .card .activity-img {
+    border-radius: 10px 10px 0 0;
   }
   .activity-card .card .col:nth-of-type(1) {
     height: 150px;
@@ -149,6 +156,7 @@ body {
 @media screen and (min-width: 1024px) {
   .activity-card .card {
     font-size: 14px;
+    height: 320px;
   }
   .activity-card .card .col:nth-of-type(1) {
     height: 160px;
@@ -163,15 +171,6 @@ body {
   }
   .activity-card .card-icon:before {
     font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .activity-card .card {
-    height: 320px;
-  }
-  .activity-card .card .col:nth-of-type(1) {
-    height: 160px;
   }
   .activity-card .card-text {
     margin-bottom: 8px;
