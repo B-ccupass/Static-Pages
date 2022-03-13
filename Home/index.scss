@@ -1,0 +1,172 @@
+$theme-color: #2C5E9E;
+$theme-color-light: #5995DD;
+$font-color: #333333;
+$font-color-light: #B2B2B2;
+
+body{
+    background-color: #F6F8F8;
+}
+
+.search-result .container{
+    max-width: 1080px;
+    margin: 0 auto;
+    .category::after{
+        content: "|";
+        margin: 5px;
+    }
+    .option{
+        color: $font-color-light;
+    }
+}
+
+.serach-window{
+    height: 100vh;
+    @media screen and (min-width: 768px) {
+        height: fit-content;
+    }
+    
+    @media screen and (min-width: 1024px) {
+    }
+    
+    @media screen and (min-width: 1200px) {
+    
+    }
+}
+
+.card-list-wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+// 頁籤
+.activity-tab{
+    .nav-link{
+        color: $font-color;
+        border: none;
+    }
+    .nav-link.active{
+        color: $theme-color;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            bottom: 1px;
+            height: 2px;
+            background-color: $theme-color;
+        }
+    }
+}
+
+// 排序器
+.sort-btn{
+    border: 1px solid $theme-color-light;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: transparent;
+    color: $theme-color-light;
+    &.active{
+        background-color: $theme-color-light;
+        color:#F6F8F8;
+    }
+}
+
+.activity-card{
+    max-width: 540px;
+    .activity-img{
+        background-image: url(https://static.accupass.com/eventbanner/2203031300598481428500.jpg);
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+    }
+    .card{
+        margin-bottom: 10px;
+        &-title{
+            font-size: 16px;
+        }
+        &-text{
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        .tags, .data{
+            height: 16px;
+            vertical-align: top;
+        }
+        &-icon{
+            color: $font-color-light;
+            font-size: 12px;
+            line-height: 14px;
+            margin-right: 10px;
+        }
+        &-icon:before{
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            font-size: 12px;
+            color: $font-color-light;
+            margin-right: 5px;
+        }
+        &-icon.icon-location:before{
+            content: "\f3c5";
+        }
+        &-icon.icon-price:before{
+            content: "\f3ff";
+        }
+        &-icon.icon-category:before{
+            content: "\f07b";
+        }
+        &-icon.icon-like:before{
+            content: "\f004";
+        }
+        &-icon.icon-watch:before{
+            content: "\f06e";
+        }
+    }
+    @media screen and (min-width: 768px) {
+        .card{
+            margin-bottom: 15px;
+            height: 280px;
+            .col:nth-of-type(1){
+                height: 150px;
+            }
+        }
+    }
+    
+    @media screen and (min-width: 1024px) {
+        .card{
+            font-size: 14px;
+            .col:nth-of-type(1){
+                height: 160px;
+            }
+            &-title{
+                font-size: 18px;
+                line-height: 24px;
+            }
+            .tags, .data{
+                height: 20px;
+                vertical-align: top;
+            }
+            &-icon:before{
+                font-size: 14px;
+            }
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        .card{
+            height: 320px;
+            .col:nth-of-type(1){
+                height: 160px;
+            }
+            &-text{
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
