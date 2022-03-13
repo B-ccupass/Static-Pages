@@ -1,3 +1,74 @@
+body {
+  background-color: #F6F8F8;
+}
+
+.search-result .container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.search-result .container .category::after {
+  content: "|";
+  margin: 5px;
+}
+
+.search-result .container .option {
+  color: #B2B2B2;
+}
+
+.search-window {
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .search-window {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
+.card-list-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.activity-tab .nav-link {
+  color: #333333;
+  border: none;
+}
+
+.activity-tab .nav-link.active {
+  color: #2C5E9E;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.activity-tab .nav-link.active::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 1px;
+  height: 2px;
+  background-color: #2C5E9E;
+}
+
+.sort-btn {
+  border: 1px solid #5995DD;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: transparent;
+  color: #5995DD;
+}
+
+.sort-btn.active {
+  background-color: #5995DD;
+  color: #F6F8F8;
+}
+
 .activity-card {
   max-width: 540px;
 }

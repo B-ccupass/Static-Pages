@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../GlobalStyle/reset.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" href="./index.css">
@@ -11,83 +10,39 @@
         <title>Home</title>
     </head>
     <body>
-        <main>
-            <div class="search-result bg-white p-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                <div class="container">
-                    <p class="m-0 d-xl-none"><span>台北</span> / <span>藝文</span> / <span>免費</span></p>
-                    <ul class="m-0 p-0 d-none d-xl-block">
-                        <li class="d-flex">
-                            <span class="category">地區</span>
-                            <ul class="d-flex p-0">
-                                <li class="option mx-1">台北</li>
-                                <li class="option mx-1">新北</li>
-                            </ul>
-                        </li>
-                    </ul>
+        <div class="main">
+            <div class="container">
+                <div class="slider-banner"></div>
+                <div class="recommend-activities">
+                    <p class="title">精選活動</p>
+                    <div class="row"></div>
                 </div>
-            </div>
-            <div class="">
-                <div class="serach-window offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                    <div class="offcanvas-header">
-                        <h5 id="offcanvasTopLabel">搜尋條件</h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        ...
-                    </div>
+                <div class="newest-activities">
+                    <p class="title">最新活動</p>
+                    <div class="row"></div>
                 </div>
-                <div class="card-list-wrap">
-                    <div class="activity-tab my-3">
-                        <ul class="nav nav-tabs container">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">進行中</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">尚未開始</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">已結束</button>
-                            </li>
-                        </ul>
-                        <div class="sort d-flex my-3 container">
-                            <button class="sort-btn px-3 py-1 m-1 active" id="sort-by-time">依時間排序</button>
-                            <button class="sort-btn px-3 py-1 m-1" id="sort-by-price">依票價排序</button>
-                            <button class="sort-btn px-3 py-1 m-1" id="sort-by-like">依收藏數排序</button>
+                <div class="create-activity">
+                    <div class="row">
+                        <div class="col">
+                            <h2>主辦活動</h2>
+                            <p>顧客試驗手機提示訊息，小組落實，原來一週更多印度這個可以能在穩定基層腦袋手機鈴聲，文章種種遊戲，解決加快適用於法人參與證實回家那位鑒定你不廣泛，戰鬥都是要在發現激動投入兩人公司一體允許目的女士，作者。</p>
+                            <div class="cta">
+                                <button>成為主辦</button>
+                                <button>舉辦活動</button>
+                            </div>
                         </div>
-                        <div class="tab-content container" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="row"></div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="row"></div>
-                            </div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="row"></div>
-                            </div>
+                        <div class="col">
+                            <img src="" alt="">
                         </div>
                     </div>
                 </div>
+                <div class="everybody-track">
+                    <div class="row">
+                        
+                    </div>
+                </div>
             </div>
-            <div class="pagination m-auto d-flex justify-content-center">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </main>
+        </div>
         <template id="activity-card-template">
             <div class="activity-card col-sm-12 col-md-6 col-lg-4">
                 <div class="card">
@@ -115,16 +70,16 @@
         </template>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script>
-            const TAB_PANELS = document.querySelectorAll(".tab-pane>.row");
-            window.onload = function(){
-                TAB_PANELS.forEach(pane => {
-                    let cardTemplate = document.getElementById("activity-card-template");
-                    for(var i = 0; i <= 8; i++){
-                        let cloneCard = cardTemplate.content.cloneNode(true);
-                        pane.append(cloneCard);
-                    }
-                });
-            }
+            // const TAB_PANELS = document.querySelectorAll(".tab-pane>.row");
+            // window.onload = function(){
+            //     TAB_PANELS.forEach(pane => {
+            //         let cardTemplate = document.getElementById("activity-card-template");
+            //         for(var i = 1; i <= 6; i++){
+            //             let cloneCard = cardTemplate.content.cloneNode(true);
+            //             pane.append(cloneCard);
+            //         }
+            //     });
+            // }
         </script>
     </body>
 </html>
