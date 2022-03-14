@@ -1,0 +1,18 @@
+$cardbodycolor: aquamarine;
+
+.boxcontent {
+    box-sizing: content-box;
+}
+.Organizer-icon {
+    font-size: 1.25rem;
+}
+.card-body {
+    transition: 0.5s;
+    border: 1px $cardbodycolor solid;
+}
+
+.card-body:hover {
+    transition: 0.5s;
+    margin-bottom: 10px;
+    box-shadow: 8px 8px 8px 0.5rem $cardbodycolor;
+}
