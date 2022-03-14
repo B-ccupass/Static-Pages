@@ -1,0 +1,24 @@
+$boxSize: 20px;
+
+.Lorm-H {
+    height: 40vh;
+}
+
+.form-check .form-check-input {
+    float: none;
+    margin-left: 0em;
+}
+
+#checkOk {
+    height: $boxSize;
+    width: $boxSize;
+}
+
+#checkOk:checked {
+    background-color: green;
+}
+
+#checkOk:focus{
+    border-color: aquamarine;
+    box-shadow: 0 0 0px 0.25rem aquamarine;
+}
