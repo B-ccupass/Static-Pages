@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Css reset -->
+    <link rel="stylesheet" href="/reset.css">
+
+    <style>
+        * {
+            box-sizing: inherit;
+        }
+        .container-style{
+            box-shadow: 0 2px 10px 0 rgb(0 0 0 / 5%);
+        }
+        .icon-div{
+            padding: 4px 10px; 
+            font-size: 15px;
+        }
+        .group{
+            min-height: 500px;
+        }
+        @media screen and (min-width: 768px) {
+            .ticket{
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .ticket{
+                width: 800px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .ticket{
+                width: 800px;
+            }
+        }
+        .ticket-label{
+            width: 100px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .ticket span{
+            color: #a0a0a0;
+        }
+
+        .ticket > div{
+            margin: 50px 0;
+        }
+        
+        .ticket-btn{
+            padding: 13px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 2px;
+            margin-left: 10px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .ticket-btn:first-child{
+            color: #435c73;
+            border: 1px solid #435c73;
+        }
+        .ticket-btn:last-child{
+            color: #fff;
+            background-color: #2da4f2;
+            border: 1px solid #2da4f2;
+        }
+        .ticket table{
+            width: calc(100% - 1px);
+        }
+        .card-pad>p{
+            padding: 0;
+            margin-top: 20px;
+        }
+        .model-width{
+            width: 300px;
+        }
+    </style>
+
+
+</head>
+<body style="height: 100%;">
+    <main class="bg-light">
+        <div class="container-md m-auto bg-white container-style">
+            <div class="ticket m-auto pt-5 pb-5">
+                <form>
+                    <div class="border-bottom group">
+                        <div class="d-md-flex flex-wrap mb-4">
+                            <div class="col-12 col-md-7">
+                                <p class="d-inline" style="font-size: 20px;">
+                                    開始為你的票券設定分組吧！ <div class="btn-dark rounded-circle d-inline-block icon-div"><i class="far fa-lightbulb"></i></div>
+                                </p>    
+                                <span>票券分組可以將票券分類歸納，依據時間或地點分組管理；消費者在購票頁面中更容易選購！</span>
+                            </div>
+                            <div class="text-center mt-5 col-12 col-md-5 d-flex justify-content-md-end justify-content-around">
+                                <button class="ticket-btn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DeleteModal"><i class="fas fa-trash-alt"></i>刪除分組</button>
+                                <button class="ticket-btn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#groupModal"><i class="fas fa-layer-group"></i>票卷分組</button>
+                            </div>
+                        </div>
+                        <div class="overflow-auto">
+                            <table class="table border accordion"  id="accordionExample">
+                                <thead class="table-dark border border-dark">
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"><input type="checkbox" name="all" onclick="//全選JS//" /></th>
+                                    <th scope="col">票券分組名稱</th>
+                                    <th scope="col">票券名稱</th>
+                                    <th scope="col">票券數量</th>
+                                    <th scope="col">票價</th>
+                                    <th scope="col">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row"  class="lh-lg"><i class="fas fa-grip-vertical"></i></th>
+                                    <td class="lh-lg"><input type="checkbox" name="c" value="" /></td>
+                                    <td class="lh-lg">Otto</td>
+                                    <td class="lh-lg">@mdo</td>
+                                    <td class="lh-lg">Mark</td>
+                                    <td class="lh-lg">Otto</td>
+                                    <td class="accordion-header" id="flush-headingOne">
+                                        <button class="btn btn-outline-light rounded-circle border-0 text-primary collapsed" 
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                    </td>
+                                    
+                                </tr>  
+                                <tr>
+                                    <td class="p-0" colspan="7">
+                                        <div class="collapse" id="collapse-1">
+                                            <div class="card card-body border-0 bg-light card-pad">
+                                                <p>票卷說明</p>
+
+                                                <p>是否為審核票?</p>
+                                                <span>是</span>
+
+                                                <p>是否開賣?</p>
+                                                <span>否</span>
+
+                                                <p>售票時間</p>
+                                                <span>2022/03/04(五) 12:00 ~ 2023/02/02(四)</span>
+
+                                                <p>有效時間(可驗票時間)</p>
+                                                <span>2022/02/01(三) 12:00 ~ 2023/02/02(四)</span>
+                                            </div>
+                                            <div class="text-center border-0 text-primary collapsed bg-opacity-10 bg-secondary" 
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                                                收和資訊
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>  
+                                
+                                <tr>
+                                    <th scope="row"  class="lh-lg"><i class="fas fa-grip-vertical"></i></th>
+                                    <td class="lh-lg"><input type="checkbox" name="c" value="" /></td>
+                                    <td class="lh-lg">788899955</td>
+                                    <td class="lh-lg">@mdo</td>
+                                    <td class="lh-lg">Mark</td>
+                                    <td class="lh-lg">Otto</td>
+                                    <td class="accordion-header" id="flush-headingOne">
+                                        <button class="btn btn-outline-light rounded-circle border-0 text-primary collapsed" 
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-1">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                    </td>
+                                    
+                                </tr>  
+                                <tr>
+                                    <td class="p-0" rowspan="6" colspan="7">
+                                        <div class="collapse" id="collapse-2">
+                                            <div class="card card-body border-0 bg-light card-pad">
+                                                <p>票卷說明</p>
+
+                                                <p>是否為審核票?</p>
+                                                <span>是</span>
+
+                                                <p>是否開賣?</p>
+                                                <span>否</span>
+
+                                                <p>售票時間</p>
+                                                <span>2022/03/04(五) 12:00 ~ 2023/02/02(四)</span>
+
+                                                <p>有效時間(可驗票時間)</p>
+                                                <span>2022/02/01(三) 12:00 ~ 2023/02/02(四)</span>
+                                            </div>
+                                            <div class="text-center border-0 text-primary collapsed bg-opacity-10 bg-secondary" 
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                                收和資訊
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="mt-3 mb-5">
+                        <button class="btn btn-success w-100 p-0 pt-1 pb-1">儲存變更</button>
+                    </div>
+
+
+                    <!-- Modal-Delete -->
+                    <div class="modal fade"id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered m-auto model-width" >
+                            <div class="modal-content">
+                                <div class="modal-body text-center lh-lg pt-3 pe-3">
+                                    確定刪除此票種分組？
+                                </div>
+                                <div class="modal-footer p-0 flex-nowrap">
+                                    <button class="btn border-0 p-1 col-6 m-0 border-end" data-bs-dismiss="modal">取消</button>
+                                    <button class="btn border-0 p-1 col-6 m-0 lh-lg">確認</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal-group -->
+                    <div class="modal fade" id="groupModal" tabindex="-1" aria-labelledby="groupModalLabel" aria-hidden="true">
+                        <div class="modal-dialog m-0 m-auto modal-dialog-centered model-width">
+                            <div class="modal-content">
+                                <div class="modal-body lh-lg pt-3 pe-3">
+                                    <p>票券分組名稱</p>
+                                    <input type="text" class="col-md-11 col-10" bg-secondary opacity-25">
+                                </div>
+                                <div class="modal-footer p-0 flex-nowrap">
+                                    <button class="btn border-0 p-1 col-6 m-0 border-end" data-bs-dismiss="modal">取消</button>
+                                    <button class="btn border-0 p-1 col-6 m-0 lh-lg">確認</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/6f96d3e28c.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
