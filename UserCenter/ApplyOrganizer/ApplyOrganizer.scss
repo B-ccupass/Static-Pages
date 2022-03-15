@@ -1,5 +1,4 @@
-$imgBoxSizeBig: 256px;
-$imgBoxSizeSam: 50px;
+$imgBoxSizeBig: 100px;
 
 .star::after {
     content: " *";
@@ -17,8 +16,6 @@ $imgBoxSizeSam: 50px;
     border-color: transparent;
 }
 #orgImg[type="file"] {
-    position: relative;
-    // position: absolute;
     width: $imgBoxSizeBig;
     height: $imgBoxSizeBig;
     background-color: transparent;
@@ -26,11 +23,10 @@ $imgBoxSizeSam: 50px;
     color: transparent;
 }
 .showImg {
-    position: absolute;
     width: $imgBoxSizeBig;
     height: $imgBoxSizeBig;
     border-radius: 50%;
-    border: 10px solid aquamarine;
+    border: 5px solid aquamarine;
 }
 .imgBtn {
     border-color: transparent;

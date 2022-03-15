@@ -16,13 +16,14 @@
 	<main>
 		<div class="container my-5 align-content-center">
 			<div class="row justify-content-center">
-				<div class="col-4">
+				<div class="col-12 col-lg-4">
 					<form id="applyOrganizer" action="/CreateActivity/Theme/Theme.html">
 						<div class="mb-3 text-center">
-							<button class="imgBtn">
-								<img class="showImg" />
-								<input id="orgImg" type='file'>
-							</button>
+							<img class="showImg">
+						</div>
+						<div class="mb-3 text-center">
+							<input type="file" class="btn-check" id="orgImg" autocomplete="off">
+							<label class="btn btn-outline-primary " for="orgImg">上傳頭像</label>
 						</div>
 						<div class="mb-3">
 							<label for="orgName" class="form-label star">主辦單位名稱</label>
@@ -47,8 +48,7 @@
 								</select>
 							</div>
 							<div class="col-sm-7 mb-2 ">
-								<input type="tel" class="orgphone form-control" id="orgPhone" placeholder="請填寫電話"
-									required>
+								<input type="tel" class="orgphone form-control" id="orgPhone" placeholder="請填寫電話" required>
 							</div>
 							<div class="col-12 mb-3">
 								<input type="tel" class="orgphone form-control" id="orgPhoneEx" placeholder="分機號碼(選填)">
@@ -71,8 +71,8 @@
 							<option value="MOP">澳門幣(MOP)</option>
 						</select>
 						<label class="form-label star">主辦單位簡介</label>
-						<textarea id="introduction" class="form-control" aria-label="With textarea" rows="6"
-							placeholder="請填寫主辦單位簡介" maxlength="255" required></textarea>
+						<textarea id="introduction" class="form-control" aria-label="With textarea" rows="6" placeholder="請填寫主辦單位簡介"
+							maxlength="255" required></textarea>
 						<p class="text-end d-block">
 							<span id="fontLange">0</span> / <span>255</span>
 						</p>
