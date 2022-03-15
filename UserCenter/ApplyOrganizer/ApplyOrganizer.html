@@ -9,7 +9,7 @@
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="./ApplyOrganizer.css">
 
-	<title>ApplyOrganizer</title>
+	<title>申請成為主辦</title>
 </head>
 
 <body>
@@ -28,7 +28,6 @@
 						<div class="mb-3">
 							<label for="orgName" class="form-label star">主辦單位名稱</label>
 							<input type="text" class="form-control" id="orgName" placeholder="請填寫主辦單位" required>
-							<div class="invalid-feedback">必填</div>
 						</div>
 						<div class="mb-3">
 							<label for="orgEmail" class="form-label star">主辦單位 Email</label>
@@ -38,38 +37,13 @@
 						<label for="orgPhone" class="col-sm form-label star">主辦單位電話號碼</label>
 						<div class=" form-text">活動參加人可於票券上查看此聯繫電話。</div>
 						<div class="row">
-							<div class="col-sm mb-2">
-								<select id="orgCountryCode" class="form-select" required>
-									<option selected>請選擇</option>
-									<option value="TW">+886 台灣</option>
-									<option value="CH">+86 中國</option>
-									<option value="HK">+852 香港</option>
-									<option value="MO">+853 澳門</option>
-								</select>
-							</div>
-							<div class="col-sm-7 mb-2 ">
+							<div class="col-sm-6 mb-2">
 								<input type="tel" class="orgphone form-control" id="orgPhone" placeholder="請填寫電話" required>
 							</div>
-							<div class="col-12 mb-3">
+							<div class="col-sm-6 mb-2">
 								<input type="tel" class="orgphone form-control" id="orgPhoneEx" placeholder="分機號碼(選填)">
 							</div>
 						</div>
-						<label for="selectLen" class="form-label star">活動語系</label>
-						<div class="form-text">本次活動宣傳所使用的語言</div>
-						<select id="selectLen" class="mb-3 form-select" aria-label="Default select example" required>
-							<option selected>請選擇</option>
-							<option value="zh-tw">繁體中文</option>
-							<option value="en">英文</option>
-						</select>
-						<label for="selectCurr" class="form-label star">活動幣別</label>
-						<div class="form-text">請注意！活動舉辦後將無法更改</div>
-						<select id="selectCurr" class="mb-3 form-select" aria-label="Default select example" required>
-							<option selected>請選擇</option>
-							<option value="NTD">台幣(NTD)</option>
-							<option value="CNY">人民幣(CNY)</option>
-							<option value="HKD">港幣(HKD)</option>
-							<option value="MOP">澳門幣(MOP)</option>
-						</select>
 						<label class="form-label star">主辦單位簡介</label>
 						<textarea id="introduction" class="form-control" aria-label="With textarea" rows="6" placeholder="請填寫主辦單位簡介"
 							maxlength="255" required></textarea>
