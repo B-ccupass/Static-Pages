@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.ticket-nav .nav-link {
+  font-size: 15px;
+}
+
+.ticket-main {
+  border: 1px solid #dee2e6;
+  border-left: 10px solid blue;
+}
+
+.ticket table {
+  border: 1px solid #dee2e6;
+  border-left: 10px solid gray;
+}
+
+.ticket table i {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
