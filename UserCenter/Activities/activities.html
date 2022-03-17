@@ -16,16 +16,18 @@
     <header></header>
     <main>
         <div class="container">
-            <div class="user">
-                
+            <div class="user mt-3">
+                <img src="./img/userpicsimulate.jpg" alt="使用者頭像" name="u-pic"
+                class="u-pic rounded-circle border border-secondary m-auto p-1 ">
+                <span class="fs-3 ms-3">{{使用者姓名}}</span>
             </div>
-            <div class="ticket-nav col-lg-12 col-md-12 col row  mx-1 my-1 py-3">
+            <div class="activities-nav col-lg-12 col-md-12 col row  mx-1 my-1 py-3">
                 <ul class="Nav-activities nav nav-tabs col-12 ">
                     <li class="nav-item  border border-bottom-0  ">
                         <a class="nav-link active" aria-current="page" href="#">參加活動</a>
                     </li>
                     <li class="nav-item   border border-bottom-0 ">
-                        <a class="nav-link text-black" href="#">收藏活動</a>
+                        <a class="nav-link text-black" href="#">喜愛活動</a>
                     </li>
                     <li class="nav-item text-black  border border-bottom-0">
                         <a class="nav-link text-black" href="#">追蹤主辦</a>
@@ -40,7 +42,7 @@
     </main>
     <footer></footer>
 
-    <template id="activity-card-template">
+    <template id="activity-card-template-join">
         <div class="activity-card col-sm-12 col-md-6 col-lg-4 ">
             <div class="card">
                 <div class="row g-0">
@@ -59,7 +61,32 @@
                             <div class="data d-flex my-4">
                                 <div class="card-icon icon-like col-6 mx-1 my-3 fs-4">20</div>
                                 <button class="btn btn-primary col-6 my-auto">撰寫評價</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </template>
 
+    <template id="activity-card-template-like">
+        <div class="activity-card col-sm-12 col-md-6 col-lg-4 ">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col col-4 col-md-12">
+                        <div class="activity-img"></div>
+                    </div>
+                    <div class="col col-8 col-md-12">
+                        <div class="card-body p-3">
+                            <h5 class="card-title">格蘭利威「品台潮」品酩會格蘭利威「品台潮」品酩會</h5>
+                            <p class="card-text"><small class="text-muted">2022-03-18(五) ~ 2022-03-19(六)</small></p>
+                            <div class="tags">
+                                <span class="card-icon icon-location">台北市</span>
+                                <span class="card-icon icon-price">免費入場</span>
+                                <span class="card-icon icon-category">美食</span>
+                            </div>
+                            <div class="data d-flex my-4">
+                                <div class="card-icon icon-like col-6 mx-1 my-3 fs-4">20</div>
+                                <button class="btn btn-primary col-6 my-auto">前往主頁</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +106,7 @@
         //function
         function createActivities(){
             activities.forEach(activity => {
-                let activityTemplate = document.getElementById("activity-card-template");
+                let activityTemplate = document.getElementById("activity-card-template-join");
                 for(var i = 1; i <= 6; i++){
                         let cloneCard = activityTemplate.content.cloneNode(true);
                         activity.append(cloneCard);
