@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/75ce54417c.js" crossorigin="anonymous"></script>
+        <title>Organizer</title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-12 d-none d-xl-block col-xl-3">
+                        <div class="organizer-side-card bg-white py-5">
+                            <div class="organizer-img mb-4 m-auto"></div>
+                            <h2 class="fs-5 text-center">The Glenlivet 格蘭利威</h2>
+                            <div class="fans-block d-flex flex-column align-items-center">
+                                <span class="fans-count fs-2">151</span>
+                                <span class="mb-4">粉絲數</span>
+                            </div>
+                            <div class="cta-btns d-flex flex-column p-4">
+                                <button class="track-organizer-btn mb-3 py-1">追蹤</button>
+                                <a class="contact-organizer-btn text-center py-1" href="mailto:a880318@gmail.com">聯絡主辦</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-9">
+                        <div class="banner-img"></div>
+                        <div class="container bg-white">
+                            <div class="organizer-mobile-card d-xl-none py-4">
+                                <div class="info row">
+                                    <div class="col-4">
+                                        <div class="organizer-img m-auto"></div>
+                                    </div>
+                                    <div class="col-8 d-flex flex-column justify-content-center">
+                                        <h2 class="fs-5">The Glenlivet 格蘭利威</h2>
+                                        <div class="cta-btns d-flex">
+                                            <button class="track-organizer-btn me-2 px-2">追蹤</button>
+                                            <a class="contact-organizer-btn px-2" href="mailto:a880318@gmail.com">聯絡主辦</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activity-tab my-3">
+                                <ul class="nav nav-tabs container">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">關於</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">活動</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content container py-4" id="myTabContent">
+                                    <div class="about-tab tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <p class="fs-5 fw-bold mb-3">簡介</p>
+                                        <p class="description-text">1824年，創辦人喬治史密斯，本著對釀製單一麥芽威士忌的堅持，他的酒受到英王喬治四世的鍾愛，因此頒發格蘭利威區第一張合法釀酒執照；然而競爭者紛紛冒用格蘭利威的名稱於自己的酒標中。1884年政府頒布公告，只有喬治史密斯生產的單一麥芽威士忌可以使用「格蘭利威」的名稱，從此格蘭利威便成了單一麥芽威士忌品質保證的標準。格蘭利威原創優雅細緻花果香，醞釀出斯佩賽區的經典標竿風味，躍上鼻息的醉人香氣，入口強勁有力，隨即轉為輕柔細緻，伴隨鳳梨、桃子的香甜、與熱帶花果芬芳，交疊出剛柔並濟的感官盛宴。</p> 
+                                        <p class="fs-5 fw-bold mb-3">媒體連結</p>
+                                        <ul class="media-link-list">
+                                            <li class="site-link media-link"><a>官方網站</a></li>
+                                            <li class="fb-link media-link"><a>Facebook</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="inprogress-wrap py-2">
+                                            <p class="fs-5 fw-bold mb-3">進行中</p>
+                                            <div class="row"></div>
+                                        </div>
+                                        <div class="notstart-wrap py-2">
+                                            <p class="fs-5 fw-bold mb-3">尚未開始</p>
+                                            <div class="row"></div>
+                                        </div>
+                                        <div class="end-wrap py-2">
+                                            <p class="fs-5 fw-bold mb-3">已結束</p>
+                                            <div class="row"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <template id="activity-card-template">
+            <div class="activity-card col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col col-4 col-md-12">
+                            <div class="activity-img"></div>
+                        </div>
+                        <div class="col col-8 col-md-12">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">格蘭利威「品台潮」品酩會格蘭利威「品台潮」品酩會</h5>
+                                <p class="card-text"><small class="text-muted">2022-03-18(五) ~ 2022-03-19(六)</small></p>
+                                <div class="tags">
+                                    <span class="card-icon icon-location">台北市</span>
+                                    <span class="card-icon icon-price">免費入場</span>
+                                    <span class="card-icon icon-category">美食</span>
+                                </div>
+                                <div class="data">
+                                    <span class="card-icon icon-like">20</span>
+                                    <span class="card-icon icon-watch">20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script>
+            const TAB_PANELS = document.querySelectorAll(".tab-pane .row");
+            window.onload = function(){
+                TAB_PANELS.forEach(pane => {
+                    let cardTemplate = document.getElementById("activity-card-template");
+                    for(var i = 1; i <= 3; i++){
+                        let cloneCard = cardTemplate.content.cloneNode(true);
+                        pane.append(cloneCard);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

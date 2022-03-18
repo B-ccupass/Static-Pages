@@ -1,0 +1,206 @@
+$theme-color: #2C5E9E;
+$theme-color-light: #5995DD;
+$font-color: #333333;
+$font-color-light: #B2B2B2;
+
+body{
+    background-color: #F6F8F8;
+}
+
+.banner-img{
+    background-image: url("https://static.accupass.com/eventbanner/2203031300598481428500.jpg");
+    width: 100%;
+    height: 250px;
+}
+.organizer-side-card, .organizer-mobile-card{
+    .organizer-img{
+        width: 100px;
+        height: 100px;
+        box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        overflow: hidden;
+        background-image: url("https://static.accupass.com/org/2103240413414437804150.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @media screen and (min-width: 768px){
+            width: 150px;
+        height: 150px;
+        }
+    }
+}
+
+// 左側主辦 平板、手機不顯示
+.organizer-side-card{
+    .fans-block{
+        color: $font-color-light;
+        font-size: 14px;
+        .fans-count{
+            color: $font-color;
+        }
+    }
+    .track-organizer-btn{
+        background-color: $theme-color;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+    }
+    .contact-organizer-btn{
+        border: 1px solid $theme-color;
+        color: $theme-color;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+}
+
+// 手機、平板主辦
+.organizer-mobile-card{
+    .track-organizer-btn, .contact-organizer-btn{
+        border: 1px solid $theme-color;
+        color: $theme-color;
+        text-decoration: none;
+        background-color: transparent;
+        border-radius: 3px;
+    }
+}
+
+// 頁籤
+.activity-tab{
+    .nav-link{
+        color: $font-color;
+        border: none;
+    }
+    .nav-link.active{
+        color: $theme-color;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            bottom: 1px;
+            height: 2px;
+            background-color: $theme-color;
+        }
+    }
+}
+
+.about-tab{
+    .description-text{
+        color: $font-color;
+        font-size: 14px;
+    }
+    .media-link-list{
+        list-style-type: none;
+        padding-left: 0;
+        .media-link:before{
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            font-size: 14px;
+            color: $font-color-light;
+            margin-right: 5px;
+        }
+        .site-link:before{
+            content: "\f0ac";
+        }
+        .fb-link:before{
+            content: "\f0ac";
+        }
+    }
+}
+
+// 活動卡片
+.activity-card{
+    max-width: 540px;
+    .activity-img{
+        background-image: url(https://static.accupass.com/eventbanner/2203031300598481428500.jpg);
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+    }
+    .card{
+        border-radius: 0px;
+        margin-bottom: 10px;
+        &-title{
+            font-size: 16px;
+        }
+        &-text{
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        .tags, .data{
+            height: 16px;
+            vertical-align: top;
+        }
+        &-icon{
+            color: $font-color-light;
+            font-size: 12px;
+            line-height: 14px;
+            margin-right: 10px;
+        }
+        &-icon:before{
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            font-size: 12px;
+            color: $font-color-light;
+            margin-right: 5px;
+        }
+        &-icon.icon-location:before{
+            content: "\f3c5";
+        }
+        &-icon.icon-price:before{
+            content: "\f3ff";
+        }
+        &-icon.icon-category:before{
+            content: "\f07b";
+        }
+        &-icon.icon-like:before{
+            content: "\f004";
+        }
+        &-icon.icon-watch:before{
+            content: "\f06e";
+        }
+    }
+    @media screen and (min-width: 768px) {
+        .card{
+            .activity-img{
+                border-radius: 10px 10px 0 0;
+            }
+            margin-bottom: 15px;
+            height: 280px;
+            box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            .col:nth-of-type(1){
+                height: 150px;
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .card{
+            font-size: 14px;
+            height: 320px;
+            .col:nth-of-type(1){
+                height: 160px;
+            }
+            &-title{
+                font-size: 18px;
+                line-height: 24px;
+            }
+            .tags, .data{
+                height: 20px;
+                vertical-align: top;
+            }
+            &-icon:before{
+                font-size: 14px;
+            }
+            &-text{
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
