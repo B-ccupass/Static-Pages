@@ -2,29 +2,71 @@ body {
   background-color: #F6F8F8;
 }
 
-.activities-list, .create-activity, .everybody-track {
+.search-result .container {
   max-width: 1080px;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
-.create-activity .cta-btn {
-  border-radius: 25px;
-  color: #ffffff;
+.search-result .container .category::after {
+  content: "|";
+  margin: 5px;
+}
+
+.search-result .container .option {
+  color: #B2B2B2;
+}
+
+.search-window {
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .search-window {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
+.card-list-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.activity-tab .nav-link {
+  color: #333333;
+  border: none;
+}
+
+.activity-tab .nav-link.active {
+  color: #2C5E9E;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.activity-tab .nav-link.active::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 1px;
+  height: 2px;
   background-color: #2C5E9E;
-  border: 1px solid #2C5E9E;
 }
 
-.everybody-track .organizer-img {
-  width: 150px;
-  height: 150px;
-  -webkit-box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
-          box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
-  overflow: hidden;
-  background-image: url("https://static.accupass.com/org/2103240413414437804150.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+.sort-btn {
+  border: 1px solid #5995DD;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: transparent;
+  color: #5995DD;
+}
+
+.sort-btn.active {
+  background-color: #5995DD;
+  color: #F6F8F8;
 }
 
 .activity-card {
