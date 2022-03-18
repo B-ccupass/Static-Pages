@@ -1,0 +1,137 @@
+body {
+  background-color: #F6F8F8;
+}
+
+.activities-list, .create-activity, .everybody-track {
+  max-width: 1080px;
+  margin: 20px auto;
+}
+
+.create-activity .cta-btn {
+  border-radius: 25px;
+  color: #ffffff;
+  background-color: #2C5E9E;
+  border: 1px solid #2C5E9E;
+}
+
+.everybody-track .organizer-img {
+  width: 150px;
+  height: 150px;
+  -webkit-box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("https://static.accupass.com/org/2103240413414437804150.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.activity-card {
+  max-width: 540px;
+}
+
+.activity-card .activity-img {
+  background-image: url(https://static.accupass.com/eventbanner/2203031300598481428500.jpg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.activity-card .card {
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+
+.activity-card .card-title {
+  font-size: 16px;
+}
+
+.activity-card .card-text {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.activity-card .card .tags, .activity-card .card .data {
+  height: 16px;
+  vertical-align: top;
+}
+
+.activity-card .card-icon {
+  color: #B2B2B2;
+  font-size: 12px;
+  line-height: 14px;
+  margin-right: 10px;
+}
+
+.activity-card .card-icon:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  color: #B2B2B2;
+  margin-right: 5px;
+}
+
+.activity-card .card-icon.icon-location:before {
+  content: "\f3c5";
+}
+
+.activity-card .card-icon.icon-price:before {
+  content: "\f3ff";
+}
+
+.activity-card .card-icon.icon-category:before {
+  content: "\f07b";
+}
+
+.activity-card .card-icon.icon-like:before {
+  content: "\f004";
+}
+
+.activity-card .card-icon.icon-watch:before {
+  content: "\f06e";
+}
+
+@media screen and (min-width: 768px) {
+  .activity-card .card {
+    margin-bottom: 15px;
+    height: 280px;
+    -webkit-box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+  .activity-card .card .activity-img {
+    border-radius: 10px 10px 0 0;
+  }
+  .activity-card .card .col:nth-of-type(1) {
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .activity-card .card {
+    font-size: 14px;
+    height: 320px;
+  }
+  .activity-card .card .col:nth-of-type(1) {
+    height: 160px;
+  }
+  .activity-card .card-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .activity-card .card .tags, .activity-card .card .data {
+    height: 20px;
+    vertical-align: top;
+  }
+  .activity-card .card-icon:before {
+    font-size: 14px;
+  }
+  .activity-card .card-text {
+    margin-bottom: 8px;
+  }
+}
+/*# sourceMappingURL=index.css.map */
