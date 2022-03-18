@@ -1,0 +1,34 @@
+$imgBoxSizeBig: 100px;
+
+.star::after {
+    content: " *";
+    font-size: 1rem;
+    color: red;
+}
+.orgphone[type="number"]::-webkit-outer-spin-button,
+.orgphone[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#orgImg[type="file"]::file-selector-button {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+}
+#orgImg[type="file"] {
+    width: $imgBoxSizeBig;
+    height: $imgBoxSizeBig;
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+.showImg {
+    width: $imgBoxSizeBig;
+    height: $imgBoxSizeBig;
+    border-radius: 50%;
+    border: 5px solid aquamarine;
+}
+.imgBtn {
+    border-color: transparent;
+    background-color: transparent;
+}

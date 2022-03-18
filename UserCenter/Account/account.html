@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/GlobalStyle/reset.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<header></header>
+	<main>
+		<div class="container">
+			<div class="edit col-lg-12 col-12 col row mx-0 mx-lg-3 my-5">
+				<h1 class="fs-4 fw-bolder ">關於我</h1>
+				<div class="edit-description p-3 mb-1 bg-secondary text-white ">歡迎來到 BCCUPASS
+					活動通，為了提供更優質且專屬於你的生活圈，讓我們更加了解你吧！</div>
+				<form>
+					<div class="pic  m-2">
+						<div class="u-photo mb-3 fs-6 fw-bolder">個人大頭貼</div>
+						<img src="./img/userpicsimulate.jpg" alt="使用者頭像" name="u-pic"
+							class="u-pic  d-block rounded-circle border border-secondary m-auto p-3">
+					</div>
+					<div class="email m-2">
+						<label class="d-block fs-6 fw-bolder mb-1" for="">Email</label>
+						<input type="text" placeholder="請輸入Email" class="col-12 fs-6 px-1 py-2" name="email">
+					</div>
+					<div class="password m-2">
+						<div class="mb-1 fs-6 fw-bolder">密碼</div>
+						<button class="changepwd btn btn-primary">變更密碼</button>
+					</div>
+					<div class="nickname m-2">
+						<label class="d-block mb-1 fs-6 fw-bolder" for="nickname">顯示名稱</label>
+						<input type="text" id="nickname" placeholder="你希望被怎麼稱呼" class="col-12 fs-6 px-1 py-2">
+					</div>
+					<div class="name m-2">
+						<label class="d-block mb-1 fs-6 fw-bolder" for="name">姓名</label>
+						<input type="text" name="" id="name" placeholder="請輸入姓名" class="col-12 fs-6 px-1 py-2">
+					</div>
+					<div class="birthday m-2">
+						<label class="d-block mb-1 fs-6 fw-bolder" for="date">生日</label>
+						<input placeholder="請選擇生日" class="col-12 fs-6 px-1 py-2" type="text"
+							onfocus="(this.type='date')" id="date">
+					</div>
+					<div class="gender m-2">
+						<div class="mb-1 fs-6 fw-bolder">性別</div>
+						<button value="Male" name="gender"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">男</button>
+						<button value="Female" name="gender"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">女</button>
+						<button value="diversity" name="gender"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">多元</button>
+					</div>
+					<div class="relationship m-2">
+						<div class="mb-1 fs-6 fw-bolder">感情狀態</div>
+						<button name="relationship" value="in_relationship"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">穩定交往</button>
+						<button value="married" name="relationship"
+							class="btn btn-primary rounded-pill px-3 py-0 me-2">已婚</button>
+						<button value="single" name="relationship"
+							class="btn btn-primary rounded-pill px-3 py-0">單身</button>
+					</div>
+					<div class="identity m-2">
+						<div class="mb-1 fs-6 fw-bolder">你的身分</div>
+						<div class="choose">
+							<button value="student" name="identity"
+								class="btn btn-primary rounded-pill px-3 py-0 me-2">學生</button>
+							<button value="society" name="identity"
+								class="btn btn-primary rounded-pill px-3 py-0 me-2">社會人士</button>
+							<button value="retired" name="identity"
+								class="btn btn-primary rounded-pill px-3 py-0 me-2">已退休</button>
+						</div>
+					</div>
+					<div class="job m-2">
+						<div class="mb-1 fs-6 fw-bolder">職業</div>
+						<select name="job" id="" class="col-12 fs-6 px-1 py-2 mb-2">
+							<option value="">請選擇行業別</option>
+							<option value="trafic">交通 / 物流 / 倉儲</option>
+							<option value="build">營造 / 建築</option>
+							<option value="manufacturing">製造業</option>
+							<option value="news">新聞廣告媒體業</option>
+							<option value="medic">醫療產業</option>
+							<option value="media">影視娛樂產業</option>
+							<option value="education">教育 / 培訓 / 研究機構</option>
+							<option value="religion">宗教團體</option>
+							<option value="public">公共事業</option>
+							<option value="sell">批發 / 零售 / 貿易</option>
+							<option value="service">服務業</option>
+							<option value="finance">財會 / 金融</option>
+							<option value="homestroom">家庭管理</option>
+							<option value="soldier">軍警消 / 保全</option>
+							<option value="law">法務人員</option>
+							<option value="consultant">顧問產業</option>
+							<option value="soft">資訊 / 軟體 / 系統</option>
+							<option value="sport">職業運動從業人員</option>
+							<option value="farm">農林漁牧業</option>
+							<option value="mine">礦業採石業</option>
+							<option value="soho">自由接案者</option>
+							<option value="student">學生</option>
+						</select>
+						<input type="text" name="company" placeholder="公司名稱" class="col-12 fs-6 px-1 py-2 mb-2">
+						<input type="text" name="title" placeholder="職稱" class="col-12 fs-6 px-1 py-2">
+					</div>
+					<div class="education m-2">
+						<label class="d-block mb-1 fs-6 fw-bolder" for="">最高學歷</label>
+						<input name="school" type="text" placeholder="學校名稱" class="col-12 fs-6 px-1 py-2 mb-2">
+						<input name="department" type="text" placeholder="科系" class="col-12 fs-6 px-1 py-2">
+					</div>
+					<div class="phone m-2 ">
+						<label for="phone" class="d-block mb-1 fs-6 fw-bolder" for="">手機號碼</label>
+						<input name="mobile" id="phone" class="col-12 px-1 py-2" type="text" placeholder="請輸入手機號碼">
+					</div>
+					<div class="address m-2 d-flex flex-wrap justify-content-between justify-content-lg-start">
+						<label class="d-block mb-1 fs-6 fw-bolder col-12" for="">現居地</label>
+						<select name="city" id="city" class="d-block mb-2 fs-6 px-1 py-2 me-lg-2"></select>
+						<select name="district" id="district"
+							class="d-block mb-2 fs-6 px-1 py-2 visually-hidden"></select>
+						<input name="address" type="text" placeholder="詳細地址" class="col-12 fs-6 px-1 py-2 d-block mb-2">
+					</div>
+					<div class="comfirm d-flex flex-row-reverse fixed-bottom ">
+						<input type="submit" value="儲存" class="col-6 col-lg-1 btn-primary border border-primary">
+						<button class="col-6 col-lg-1  btn-white border border-secondary text-secondary me-lg-3 bg-white">捨棄變更</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+
+
+	<script>
+		//全域變數
+		const twnurl = "https://raw.githubusercontent.com/apprunner/FileStorage/master/TaiwanAddress.json"
+		let CityArray = []
+		let DistrictArray = []
+
+		//DOM
+		const citySelect = document.querySelector("#city")
+		const districtSelect = document.querySelector("#district")
+		const btnChangePwd = document.querySelector(".changepwd")
+		const container = document.querySelector(".comfirm")
+
+		window.onload = function () {
+			getFetch()
+			citySelect.onchange = function () {
+				districtSelect.length = 0;
+				showDistrictSelect()
+				const selectedCity = citySelect.value
+				DistrictArray = [""].concat(CityArray.find(x => x.CityName == selectedCity).AreaList.map(x => `${x.ZipCode} ${x.AreaName}`))
+				setDistrictSelect()
+				DistrictArray=[""]
+			}
+
+			btnChangePwd.onclick = function(){
+				changePwd()
+			}
+		}
+
+		//function
+		function getFetch() {
+			fetch(twnurl)
+				.then(res => res.json())
+				.then(data => {
+					CityArray = [{ CityName: "", AreaList: [] }].concat(data)
+					DistrictArray = [""]
+					setCitySelect()
+					setDistrictSelect()
+				})
+				.catch(ex => { console.warn(ex) })
+		}
+
+		function setCitySelect() {
+			CityArray.forEach(city => {
+				let cityOption = document.createElement("option")
+				cityOption.innerText = city.CityName == "" ? "請選擇縣市" : city.CityName
+				cityOption.value = city.CityName
+				citySelect.appendChild(cityOption)
+			})
+		}
+
+		function showDistrictSelect() {
+			districtSelect.classList.remove("visually-hidden")
+		}
+
+		function setDistrictSelect() {
+			DistrictArray.forEach(district => {
+				let districtOption = document.createElement("option")
+				districtOption.innerText = district == "" ? "請選擇行政區" : district
+				districtOption.value = district
+				districtSelect.appendChild(districtOption)
+			})
+		}
+
+		// function changePwd(){
+		// 	let verifyPwd = document.createElement("div")
+		// 	verifyPwd.setAttribute("class","modal-dialog modal-dialog-centered fade")
+		// 	container.appendChild(verifyPwd)
+		// }
+
+
+	</script>
+</body>
+
+
+
+</html>

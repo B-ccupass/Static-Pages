@@ -1,0 +1,24 @@
+.Lorm-H {
+  height: 40vh;
+}
+
+.form-check .form-check-input {
+  float: none;
+  margin-left: 0em;
+}
+
+#checkOk {
+  height: 20px;
+  width: 20px;
+}
+
+#checkOk:checked {
+  background-color: green;
+}
+
+#checkOk:focus {
+  border-color: aquamarine;
+  -webkit-box-shadow: 0 0 0px 0.25rem aquamarine;
+          box-shadow: 0 0 0px 0.25rem aquamarine;
+}
+/*# sourceMappingURL=Policy.css.map */
