@@ -1,0 +1,23 @@
+.boxcontent {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.Organizer-icon {
+  font-size: 1.25rem;
+}
+
+.card-body {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 1px aquamarine solid;
+}
+
+.card-body:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 8px 8px 8px 0.5rem aquamarine;
+          box-shadow: 8px 8px 8px 0.5rem aquamarine;
+}
+/*# sourceMappingURL=Organizer.css.map */

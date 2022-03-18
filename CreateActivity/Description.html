@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Css reset -->
+    <link rel="stylesheet" href="/reset.css">
+
+    <style>
+        .container-style{
+            box-shadow: 0 2px 10px 0 rgb(0 0 0 / 5%);
+        }
+        @media screen and (min-width: 768px) {
+            .activity{
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .activity{
+                width: 800px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .activity{
+                width: 800px;
+            }
+        }
+
+        .activity-area{
+            line-height: 1.71;
+            font-size: 16px;
+        }
+        div.activity-area{
+            margin: 50px 0;
+        }
+        .activity-area textarea{
+            resize: none;
+            width: 100%;
+            min-height: 156px;
+            background-color: #f1f1f1;
+            font-size: 16px;
+            line-height: 24px;
+            color: #282828;
+            border: 0;
+            padding: 14px 24px;
+            border-radius: 0;
+        }
+        .activity span{
+            color: #a0a0a0;;
+            font-size: 14px;
+        }
+        .activity p>span{
+            color: red;
+        }
+    </style>
+</head>
+<body style="height: 100%;">
+    <main class="bg-light">
+        <div class="container-md m-auto bg-white container-style">
+            <div class="activity m-auto p-5">
+                <form>
+                    <div class="col-12 border-bottom">
+                        <div class="fw-bold mb-5 text-center">詳細介紹你的活動內容，讓參加者了解活動且提高參加意願！</div>
+
+                        <div class="activity-area" >
+                            <p class="fw-bold">活動摘要<span>*</span></p>
+                            <span>不能錯過本活動的理由！這段文字將會做為Google搜尋的簡介說明，正確的描述有助於提高消費者的興趣。</span>
+                            <textarea style="resize:none;" class="w-100 activity-area" name="" id="" rows="4"></textarea>
+                            <p style="float: right;">0/500</p>
+                        </div>
+
+                        <div class="activity-area" >
+                            <p class="fw-bold">活動簡介<span>*</span></p>
+                            <span>若你的活動為收費活動，為避免消費爭議，請於活動內容中加上主辦是否開立發票之相關說明。</span>
+                            <textarea style="resize:none;" class="w-100 activity-area" name="" id="" rows="4"></textarea>
+                        </div>
+
+                        <div class="activity-area" >
+                            <p class="fw-bold">注意事項<span>*</span></p>
+                            <span>本段文字會顯示在電子票券上，可以在這邊提示關於入場的重要資訊。</span>
+                            <textarea style="resize:none;" class="w-100 activity-area" name="" id="" rows="4"></textarea>
+                            <p style="float: right;">0/500</p>
+                        </div>
+                    </div>
+                        
+                    <div class="mt-3 mb-5">
+                        <button class="btn btn-success w-100">儲存變更</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/6f96d3e28c.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

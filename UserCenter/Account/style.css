@@ -1,5 +1,27 @@
-.pic {
-  width: 25px;
-  height: 25px;
+.pic img {
+  width: 100px;
+  height: auto;
+}
+
+.comfirm {
+  height: 5%;
+}
+
+.address select {
+  width: 49%;
+}
+
+@media screen and (min-width: 1024px) {
+  .pic img {
+    width: 150px;
+    height: auto;
+  }
+  .comfirm {
+    position: static;
+    height: 40px;
+  }
+  .comfirm button, .comfirm input {
+    border-radius: 5px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

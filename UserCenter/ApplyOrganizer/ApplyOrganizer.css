@@ -1,0 +1,38 @@
+.star::after {
+  content: " *";
+  font-size: 1rem;
+  color: red;
+}
+
+.orgphone[type="number"]::-webkit-outer-spin-button,
+.orgphone[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#orgImg[type="file"]::file-selector-button {
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#orgImg[type="file"] {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.showImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid aquamarine;
+}
+
+.imgBtn {
+  border-color: transparent;
+  background-color: transparent;
+}
+/*# sourceMappingURL=ApplyOrganizer.css.map */
