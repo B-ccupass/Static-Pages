@@ -1,0 +1,45 @@
+$theme-color: #2C5E9E;
+$theme-color-light: #5995DD;
+$font-color: #333333;
+$font-color-light: #B2B2B2;
+.navbar{
+    background-color: $theme-color-light !important;
+    .navbar-brand{
+        color: #ffffff;
+    }
+    .navbar-nav .nav-link.active{
+        color: #333333;
+    }
+    .navbar-nav .nav-link{
+        color: #ffffff;
+    }
+    .user-img{
+        width: 40px;
+        height: 40px;
+        //box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        overflow: hidden;
+        background-image: url("https://static.accupass.com/org/2103240413414437804150.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .dropdown .dropdown-toggle{
+        @media screen and (min-width: 992px) {
+            padding: 0 40px;
+            padding-left: 40px;
+            padding-right: 20px;
+        }
+    }
+    .dropdown-toggle::after{
+        display: none;
+    }
+    .dropdown-menu[data-bs-popper]{
+        left: -90px;
+        top:113%;
+    }
+}
+.footer{
+    background-color: $theme-color-light;
+    color: #fff;
+}
