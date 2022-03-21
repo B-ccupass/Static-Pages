@@ -16,13 +16,34 @@
     i{
         cursor: pointer;
     }
+
 }
 
+.ticket-operate{
+    
+
+    .get,.info,.price{
+        width: 32%;
+        height: 70%;
+        font-size: 12px;
+        
+    }
+}
 
 @media screen and (min-width: 768px) {
 
 }
 
 @media screen and (min-width: 1024px) {
+
+    .ticket-operate{
+    
+
+        .get,.info,.price{
+            width: 32%;
+            height: 50%;
+            font-size: 14px;
+        }
+    }
 
 }

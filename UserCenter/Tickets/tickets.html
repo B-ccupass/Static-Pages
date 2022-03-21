@@ -34,7 +34,7 @@
                     </li>
                 </ul>
                 <div class="ticketbox col-12 my-4 p-0">
-                    <div class="ticket px-2">
+                    <!-- <div class="ticket px-2">
                         <div class="ticket-main py-3 px-2 d-flex flex-wrap">
                             <div class="ticket-info col-12 col-lg-8">
                                 <h2 class="title fs-5 my-2">{{活動名稱}}</h2>
@@ -84,7 +84,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -94,23 +94,23 @@
     <template id="ticket-info-content-template">
         <div class="ticket px-2">
             <div class="ticket-main py-3 px-2 d-flex flex-wrap">
-                <div class="ticket-info col-12 col-lg-8">
+                <div class="ticket-info col-12 col-md-8">
                     <h2 class="title fs-5 my-2">{{活動名稱}}</h2>
                     <p class="date fs-6 my-2">{{訂單日期}}</p>
                     <p class="id fs-6 my-2 text-secondary">{{訂單編號}}</p>
                 </div>
-                <div class="ticket-operate col-12 col-lg-4 d-flex ">
+                <div class="ticket-operate col-12 col-md-4 d-flex align-items-center ">
                     <a
-                        class="get btn btn-primary border me-3 w-25 ms-auto d-flex align-items-center justify-content-center">快速取票</a>
+                        class="get btn btn-primary border me-3  ms-auto d-flex align-items-center justify-content-center ">快速取票</a>
                     <div
-                        class="price btn btn-white border w-25 me-3 d-flex align-items-center align-content-center flex-wrap justify-content-center ">
+                        class="price btn btn-white border  me-3 d-flex align-items-center align-content-center flex-wrap justify-content-center  ">
                         {{金額}}
-                        <div class=" text-secondary">訂單金額</div>
+                        <div class=" text-secondary d-lg-block d-none">訂單金額</div>
                     </div>
                     <button
-                        class="info btn btn-white border w-25 me-3 d-flex align-content-center align-items-center flex-wrap justify-content-center">
+                        class="info btn btn-white border py-3  me-3 d-flex align-content-center align-items-center flex-wrap justify-content-center ">
                         {{數量}}<i class="fas fa-sort-down"></i>
-                        <div class=" text-secondary">票券資訊</div>
+                        <div class=" text-secondary d-lg-block d-none">票券資訊</div>
                     </button>
                 </div>
             </div>

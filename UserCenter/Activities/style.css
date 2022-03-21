@@ -118,15 +118,8 @@ body {
   .activity-card .card .col:nth-of-type(1) {
     height: 150px;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .activity-card .card {
-    font-size: 14px;
-    height: 360px;
-  }
   .organizer {
-    height: 220px;
+    height: auto;
   }
   .organizer img {
     height: 200px;
@@ -140,6 +133,13 @@ body {
   .organizer .organizer-activities .activity-card .card-title {
     font-size: 14px;
     line-height: 14px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .activity-card .card {
+    font-size: 14px;
+    height: 360px;
   }
   .activity-card .card .col:nth-of-type(1) {
     height: 160px;
@@ -157,6 +157,12 @@ body {
   }
   .activity-card .card-text {
     margin-bottom: 8px;
+  }
+  .organizer {
+    height: 220px;
+  }
+  .organizer-activities .activity-img {
+    height: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

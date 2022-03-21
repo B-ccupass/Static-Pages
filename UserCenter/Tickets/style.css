@@ -15,4 +15,18 @@
 .ticket table i {
   cursor: pointer;
 }
+
+.ticket-operate .get, .ticket-operate .info, .ticket-operate .price {
+  width: 32%;
+  height: 70%;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+  .ticket-operate .get, .ticket-operate .info, .ticket-operate .price {
+    width: 32%;
+    height: 50%;
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

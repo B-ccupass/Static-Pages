@@ -106,6 +106,8 @@ body {
   .activity-card .card-icon.icon-watch:before {
     content: "\f06e";
   }
+
+  
   
   @media screen and (min-width: 768px) {
     .activity-card .card {
@@ -121,17 +123,9 @@ body {
     .activity-card .card .col:nth-of-type(1) {
       height: 150px;
     }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .activity-card .card {
-      font-size: 14px;
-      height: 360px;
-    }
-
     .organizer{
+      height: auto;
 
-      height: 220px;
       img{
         height:200px;
       }
@@ -146,6 +140,14 @@ body {
         line-height: 14px;
       }
     }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .activity-card .card {
+      font-size: 14px;
+      height: 360px;
+    }
+
 
     .activity-card .card .col:nth-of-type(1) {
       height: 160px;
@@ -163,5 +165,15 @@ body {
     }
     .activity-card .card-text {
       margin-bottom: 8px;
+    }
+
+    .organizer{
+      height: 220px;
+    }
+
+    .organizer-activities{
+      .activity-img{
+        height: auto;
+      }
     }
   }
