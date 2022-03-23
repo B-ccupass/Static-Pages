@@ -40,7 +40,7 @@
 			</div>
 			<div class="container align-content-center">
 				<div class="row justify-content-center">
-					<div class="col-12 col-lg-4">
+					<div class="col-12 col-lg-6">
 						<div class="mb-3 text-center">
 							<label for="orgName" class="form-label d-block">主辦單位名稱</label>
 							<label id="orgName">@{userName}</label>
@@ -118,25 +118,31 @@
 							<div class="col-12">
 								<div class="collapse offlineCard" id="offline">
 									<div class="card card-body">
-											<div class="form-text m-0">詳細地址 </div>
-											<input type="text" class="form-control mb-2" id="actAddress">
-										</div>
+										<select class="form-select mb-2" aria-label="Default select example">
+											<option selected>選擇行政區</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+										</select>
+										<div class="form-text m-0">詳細地址 </div>
+										<input type="text" class="form-control mb-2" id="actAddress">
 										<div class="mb-3">
 											<div class="form-text m-0">補充說明 </div>
 											<input type="text" class="form-control mb-2" id="SuppNote">
 										</div>
-										<div class="mb-3 text-center">
-											<iframe
-												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747434.6462288443!2d117.84084813038893!3d23.474739268021157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ed5cb2b61c3a5%3A0xcf20ddb042be7fa0!2z6Ie654Gj!5e0!3m2!1szh-TW!2stw!4v1647353658259!5m2!1szh-TW!2stw"
-												class="googleMap" loading="lazy"></iframe>
-										</div>
+									</div>
+									<div class="mb-3 text-center">
+										<iframe
+											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747434.6462288443!2d117.84084813038893!3d23.474739268021157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ed5cb2b61c3a5%3A0xcf20ddb042be7fa0!2z6Ie654Gj!5e0!3m2!1szh-TW!2stw!4v1647353658259!5m2!1szh-TW!2stw"
+											class="googleMap" loading="lazy"></iframe>
 									</div>
 								</div>
 							</div>
-							<button id="sumBtn" type="submit" class="btn btn-primary w-100">送出</button>
 						</div>
+						<button id="sumBtn" type="submit" class="btn btn-primary w-100">送出</button>
 					</div>
 				</div>
+			</div>
 			</div>
 		</form>
 
