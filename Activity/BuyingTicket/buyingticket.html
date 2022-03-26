@@ -20,26 +20,40 @@
 
     <body>
         <div class="main">
-            <div class="countainer d-flex">
-                <div class="activity-info col-12 col-lg-4">
+            <div class="countainer d-flex flex-wrap p-3">
+                <div class="activity-info mb-3 col-12 col-lg-4">
                     <img src="https://static.accupass.com/eventbanner/1912261025314213385400_P520x260.jpg" alt="活動圖片" class="col-10">
                     <h2>{{活動名稱}}</h2>
                     <p>{{開始時間}}~{{結束時間}}</p>
                     <p>{{活動地點}}</p>
+                    <div class="must-know text-primary fs-6 pe-lg-5">
+                        <div class=" my-1 fs-5">購票須知：</div>
+                        ＊請注意，您應該先完成一筆訂購後再進行下一筆購買。為保障消費者權益及杜絕非法囤票，同一使用者同時間只能進行一筆訂購，透過多開視窗同時購買將造成訂單無效，敬請理解與配合。
+                    </div>
                 </div>
                 <div class="ticket-group col-12 col-lg-8">
-                    <div class="ticket-group-select">
+                    <div class="ticket-group-select mb-3">
                         <div class="">請選擇票種</div>
                         <select name="" id="">
                             <option value="">展覽門票</option>
                         </select>
                     </div>
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
+                    <div class="accordion accordion-flush " id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item border border-1 my-2 p-2">
                             <div class="accordion-header" id="panelsStayOpen-headingOne">
-                                <div class="">{{活動名稱}}</div>
-                                <div class="">{{活動價格}}</div>
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                <div class="activity-buying d-flex my-1 ">
+                                    <div class="buyinfo col-10">
+                                        <div class="fs-3 my-3">{{活動名稱}}{{數量}}</div>
+                                        <div class="fs-5 mb-1">{{活動價格}}</div>
+                                    </div>
+                                    <div class="buy-btn col-2 d-flex  ">
+                                        <button  class=" buy-button btn btn-primary border rounded-circle m-auto d-flex align-items-center justify-content-center fs-3  ">
+                                            +
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <button class="accordion-button fw-bold ps-1" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
                                     更多資訊
@@ -47,13 +61,19 @@
                             </div>
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                                 aria-labelledby="panelsStayOpen-headingOne">
-                                <div class="accordion-body">
-                                    <div class="">售票時間</div>
-                                    <div class="">{{售票開始時間}}~{{售票結束時間}}</div>
-                                    <div class="">票券可使用時間</div>
-                                    <div class="">{{票券可使用時間}}</div>
-                                    <div class="">票券說明</div>
-                                    <div class="">{{票券說明}}</div>
+                                <div class="accordion-body text-primary">
+                                    <div class="fs-6 mb-2">
+                                        <div class=" fw-bold">售票時間</div>
+                                        {{售票開始時間}}~{{售票結束時間}}
+                                    </div>
+                                    <div class="fs-6 mb-2">
+                                        <div class="fw-bold">票券可使用時間</div>
+                                        {{票券可使用時間}}
+                                    </div>
+                                    <div class="fs-6 mb-2">
+                                        <div class="fw-bold">票券說明</div>
+                                        {{票券說明}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

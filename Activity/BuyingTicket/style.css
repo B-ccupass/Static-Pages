@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.buy-button {
+  width: 50px;
+  height: 50px;
+}
+
+.accordion-body {
+  background-color: #DEF2FF;
+}
+
+.accordion-button::after {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=style.css.map */
