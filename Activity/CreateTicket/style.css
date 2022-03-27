@@ -1,0 +1,20 @@
+.ticket .time {
+  border: 1px solid #dee2e6;
+  border-bottom: dashed #dee2e6;
+}
+
+.accordion {
+  font-size: 1rem;
+}
+
+.accordion .accordion-body {
+  background-color: #DEF2FF;
+}
+
+@media screen and (min-width: 768px) {
+  .ticket {
+    padding-right: 7rem;
+    padding-left: 7rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
