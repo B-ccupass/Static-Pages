@@ -18,16 +18,16 @@ window.onload = function () {
 function checkUI() {
     if (citySelect.value == '') {
         districtSelect.setAttribute('disabled', 'true')
-        submitBtn.setAttribute('disabled', 'true')
+        // submitBtn.setAttribute('disabled', 'true')
 
     } else {
         districtSelect.removeAttribute('disabled')
     }
 
     if (districtSelect.value == '') {
-        submitBtn.setAttribute('disabled', 'true')
+        // submitBtn.setAttribute('disabled', 'true')
     } else {
-        submitBtn.removeAttribute('disabled')
+        // submitBtn.removeAttribute('disabled')
     }
 }
 function getFetchData() {

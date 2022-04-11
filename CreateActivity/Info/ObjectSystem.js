@@ -38,7 +38,7 @@ function CreateSpan(string) {
     let span = document.createElement('span')
     let btn = document.createElement('button')
     span.innerText = string
-    span.classList.add('btn', 'btn-info', 'mx-1')
+    span.classList.add('btn', 'btn-info', 'mx-2')
     span.setAttribute('id', 'spanInput')
     btn.classList.add('btn-close')
     btn.classList.add('p-2')
@@ -88,9 +88,17 @@ online.addEventListener('click', function () {
     onlineLab.classList.add('disabled')
     offlineLab.classList.remove('disabled')
     offlineCard.classList.remove('show')
+    StreamingWeb.disabled = false
+    StreamingWeb.required = true
+    citySelect.required = false
+    districtSelect.required = false
 })
 offline.addEventListener('click', function () {
     offlineLab.classList.add('disabled')
     onlineLab.classList.remove('disabled')
     onlineCard.classList.remove('show')
+    StreamingWeb.disabled = true
+    StreamingWeb.required = false
+    citySelect.required = true
+    districtSelect.required = true
 })
