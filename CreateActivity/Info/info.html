@@ -40,7 +40,7 @@
 			</div>
 			<div class="container align-content-center">
 				<div class="row justify-content-center">
-					<div class="col-12 col-lg-4">
+					<div class="col-12 col-lg-6">
 						<div class="mb-3 text-center">
 							<label for="orgName" class="form-label d-block">主辦單位名稱</label>
 							<label id="orgName">@{userName}</label>
@@ -118,10 +118,16 @@
 							<div class="col-12">
 								<div class="collapse offlineCard" id="offline">
 									<div class="card card-body">
+										<div class="row mb-3">
+											<div class="col-6">
+												<select id="city" class="form-select" aria-label="Default select example"></select>
+											</div>
+											<div class="col-6">
+												<select id="district" class="form-select" aria-label="Default select example"></select>
+											</div>
+										</div>
 											<div class="form-text m-0">詳細地址 </div>
 											<input type="text" class="form-control mb-2" id="actAddress">
-										</div>
-										<div class="mb-3">
 											<div class="form-text m-0">補充說明 </div>
 											<input type="text" class="form-control mb-2" id="SuppNote">
 										</div>
@@ -145,7 +151,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
-	<script src="./info.js"></script>
+	<script src="./ActivityInfo.js"></script>
+	<script src="./CityData.js"></script>
 
 </body>
 
