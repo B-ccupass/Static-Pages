@@ -1,7 +1,4 @@
-window.onload = function () {
-    // let img = document.querySelector('.showImg')
-    // img.setAttribute('src', './img/image.png')
-}
+window.onload = function () { }
 let actImg = document.getElementById('actImg')
 actImg.addEventListener("change", function (e) {
     const file = this.files[0]

@@ -37,7 +37,7 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-6">
-					<div class="row row-cols-2 row-cols-lg-5 categoryShow justify-content-start"> </div>
+					<div class="row row-cols-2 row-cols-lg-5 typeShow justify-content-start"> </div>
 					<div class="row row-cols-2 row-cols-lg-5 justify-content-center justify-content-lg-between text-center">
 						<div class="col">
 							<button id="backPageBtn" type="button" class="btn btn-lg btn-primary my-3 float-lg-start">上一頁</button>
@@ -50,30 +50,167 @@
 				</div>
 			</div>
 		</div>
-
-		<template id="theme">
-			<div class="col text-center py-3">
-				<input type="checkbox" class="btn-check themeInput" id="">
-				<label class="btn btn-outline-primary w-100 themeLab" for="">
-					<i class="bi d-block iconBig"></i>
-					<p class="m-0"></p>
-				</label>
-			</div>
-		</template>
-
-		<template id="category">
-			<div class="col text-center py-3">
-				<input type="radio" class="btn-check categoryInput" name="categoryRadio">
-				<label class="btn btn-lg btn-outline-info w-100 p-2 categorylabel"></label>
-			</div>
-		</template>
 	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
-		
+
 </body>
-<script src="./Category.js"></script>
+
+<script>
+	const ActivityType = [
+		{ TypeName: '課程', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '展覽', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '派對', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '聚會', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '市集', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '比賽', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '表演', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '研討會', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '分享會', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '見面會', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '宣傳活動', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '導覽', TypeImg: 'bi-bag-fill' },
+		{ TypeName: '體驗', TypeImg: 'bi-bag-fill' },
+	]
+	const ActivityTheme = [
+		{ ActivityThemeName: '戶外', ActivityThemeImage: 'bi-activity' },
+		{ ActivityThemeName: '學習', ActivityThemeImage: 'bi-alarm' },
+		{ ActivityThemeName: '親子', ActivityThemeImage: 'bi-apple' },
+		{ ActivityThemeName: '寵物', ActivityThemeImage: 'bi-archive' },
+		{ ActivityThemeName: '科技', ActivityThemeImage: 'bi-arrow-down-circle' },
+		{ ActivityThemeName: '商業', ActivityThemeImage: 'bi-arrow-repeat' },
+		{ ActivityThemeName: '創業', ActivityThemeImage: 'bi-arrow-through-heart' },
+		{ ActivityThemeName: '投資', ActivityThemeImage: 'bi-asterisk' },
+		{ ActivityThemeName: '設計', ActivityThemeImage: 'bi-balloon' },
+		{ ActivityThemeName: '藝文', ActivityThemeImage: 'bi-bandaid' },
+		{ ActivityThemeName: '手作', ActivityThemeImage: 'bi-bar-chart-fill' },
+		{ ActivityThemeName: '美食', ActivityThemeImage: 'bi-bell-fill' },
+		{ ActivityThemeName: '攝影', ActivityThemeImage: 'bi-bookmark-check-fill' },
+		{ ActivityThemeName: '遊戲', ActivityThemeImage: 'bi-controller' },
+		{ ActivityThemeName: '運動', ActivityThemeImage: 'bi-border-width' },
+		{ ActivityThemeName: '健康', ActivityThemeImage: 'bi-box2-heart-fill' },
+		{ ActivityThemeName: '音樂', ActivityThemeImage: 'bi-chat-dots' },
+		{ ActivityThemeName: '電影', ActivityThemeImage: 'bi-camera2' },
+	]
+
+	window.onload = function () {
+		ActivityType.forEach((item, index) => {
+			let _tem = createTypeCard(item.TypeName, item.TypeImg, index)
+			typeShow.append(_tem)
+		})
+		ActivityTheme.forEach((item, index) => {
+			var _tem = createThemeCard(item.ActivityThemeName, item.ActivityThemeImage, index)
+			themeShow.append(_tem)
+		});
+
+		ThemeCategory = {
+			"ActivityDraftId": 1,
+			'ActivityPrimaryThemeId': parseInt(selectArray[0]),
+			'ActivitySecondThemeId': parseInt(selectArray[1]),
+			'ActivityTypeId': -1,
+			'ActivityArray': selectArray,
+		}
+	}
+	let ThemeCategory = {}
+	let selectArray = []
+	let themeShow = document.querySelector('.themeShow')
+	let typeShow = document.querySelector('.typeShow')
+	let typeid;
+
+	function GatObject() {
+		return {
+			"ActivityDraftId": 1,
+			'ActivityPrimaryThemeId': parseInt(selectArray[0]),
+			'ActivitySecondThemeId': parseInt(selectArray[1]),
+			'ActivityTypeId': typeid,
+			'ActivityArray': selectArray,
+		}
+	}
+
+	function checkOK() {
+		if (!isNaN(ThemeCategory.ActivityPrimaryThemeId) && ThemeCategory.ActivityTypeId !== -1 && (!!ThemeCategory.ActivityTypeId || ThemeCategory.ActivityTypeId == 0)) {
+			return true
+		}
+		else {
+			return false
+		}
+	}
+
+
+	function createThemeCard(name, icon, index) {
+		var div = document.createElement('div'),
+			input = document.createElement('input'),
+			label = document.createElement('label'),
+			i = document.createElement('i'),
+			span = document.createElement('span')
+		div.classList.add('col', 'text-center', 'py-3')
+		input.classList.add('btn-check', 'themeInput')
+		i.classList.add('bi', 'd-block', 'iconBig', icon)
+		label.classList.add('btn', 'btn-lg', 'btn-outline-info', 'w-100', 'p-2', 'typeLabel')
+		span.classList.add('m-0')
+		span.innerText = name
+		input.type = 'checkbox'
+		label.setAttribute('for', index)
+		input.setAttribute('id', index)
+		label.appendChild(i)
+		label.append(span)
+		div.appendChild(input)
+		div.appendChild(label)
+		input.addEventListener("click", function () {
+			if (input.checked) {
+				if (selectArray.length < 2) { selectArray.push(input.id) }
+				else { input.checked = false }
+			} else { selectArray.splice(input.value, 1) }
+			ThemeCategory = GatObject()
+		})
+		return div
+	}
+	function createTypeCard(name, icon, index) {
+		var div = document.createElement('div'),
+			input = document.createElement('input'),
+			label = document.createElement('label'),
+			i = document.createElement('i'),
+			span = document.createElement('span')
+		div.classList.add('col', 'text-center', 'py-3')
+		input.classList.add('btn-check', 'typeInput')
+		i.classList.add('bi', 'd-block', 'iconBig', icon)
+		label.classList.add('btn', 'btn-lg', 'btn-outline-info', 'w-100', 'p-2', 'typeLabel')
+		span.classList.add('m-0')
+		span.innerText = name
+		input.type = 'radio'
+		input.setAttribute('id', `type${index}`)
+		label.setAttribute('for', `type${index}`)
+		input.setAttribute('value', index)
+		input.name = 'typeRadio'
+		label.appendChild(i)
+		label.append(span)
+		div.appendChild(input)
+		div.appendChild(label)
+		input.addEventListener("click", function () {
+			typeid = parseInt(this.value)
+			ThemeCategory = GatObject()
+		})
+		return div
+	}
+	function GetUserSelect() {
+		var themeInput = document.querySelectorAll('.themeInput')
+		var typeInput = document.querySelectorAll('.typeInput')
+		selectArray.forEach(input => {
+			for (let i = 0; i < themeInput.length; i++) {
+				if (themeInput[i].id == input) {
+					themeInput[i].checked = true
+				}
+			}
+		})
+		typeInput[ThemeCategory.ActivityTypeId].checked = true
+	}
+
+	document.getElementById("backPageBtn").addEventListener("click", function () {
+		history.go(-1)
+	})
+
+</script>
 
 </html>
