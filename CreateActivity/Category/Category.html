@@ -18,37 +18,40 @@
 <body>
 	<main>
 		<div class="container my-5 align-content-center">
-			<div class="row justify-content-center">
-				<div class="col-6">
-					<h1 class=" text-center fs-2 my-4">選擇活動主題(最多選擇2個)</h1>
+			<form id="categorySelect" action="">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-6">
+						<h1 class=" text-center fs-2 my-4">選擇活動主題(最多選擇2個)</h1>
+					</div>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-6">
-					<form id="categorySelect" action="">
-						<div class="row row-cols-2 row-cols-lg-5 themeShow justify-content-start ">
-						</div>
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-6">
+						<div class="row row-cols-3 row-cols-lg-5 themeShow justify-content-start"></div>
+					</div>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-6">
-					<h1 class=" text-center fs-2 my-4">選擇活動類型</h1>
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-6">
+						<h2 class=" text-center fs-2 my-4">選擇活動類型</h2>
+					</div>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-6">
-					<div class="row row-cols-2 row-cols-lg-5 typeShow justify-content-start"> </div>
-					<div class="row row-cols-2 row-cols-lg-5 justify-content-center justify-content-lg-between text-center">
-						<div class="col">
-							<button id="backPageBtn" type="button" class="btn btn-lg btn-primary my-3 float-lg-start">上一頁</button>
-						</div>
-						<div class="col">
-							<button id="sumBtn" type="submit" class="btn btn-lg btn-primary my-3 float-lg-end">下一步</button>
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-6">
+						<div class="row row-cols-3 row-cols-lg-5 typeShow justify-content-start"> </div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-6">
+						<div class="row row-cols-2 row-cols-lg-5 justify-content-center justify-content-lg-between text-center">
+							<div class="col">
+								<button id="backPageBtn" type="button" class="btn btn-lg btn-primary my-3 float-lg-start">上一頁</button>
+							</div>
+							<div class="col">
+								<button id="sumBtn" type="submit" class="btn btn-lg btn-primary my-3 float-lg-end">下一步</button>
+							</div>
 						</div>
 					</div>
-					</form>
 				</div>
-			</div>
+			</form>
 		</div>
 	</main>
 
@@ -107,8 +110,8 @@
 
 		ThemeCategory = {
 			"ActivityDraftId": 1,
-			'ActivityPrimaryThemeId': parseInt(selectArray[0]),
-			'ActivitySecondThemeId': parseInt(selectArray[1]),
+			'ActivityPrimaryThemeId': selectArray[0],
+			'ActivitySecondThemeId': selectArray[1],
 			'ActivityTypeId': -1,
 			'ActivityArray': selectArray,
 		}
@@ -122,23 +125,20 @@
 	function GatObject() {
 		return {
 			"ActivityDraftId": 1,
-			'ActivityPrimaryThemeId': parseInt(selectArray[0]),
-			'ActivitySecondThemeId': parseInt(selectArray[1]),
-			'ActivityTypeId': typeid,
+			'ActivityPrimaryThemeId': (selectArray[0] + 1),
+			'ActivitySecondThemeId': (selectArray[1] + 1),
+			'ActivityTypeId': (typeid + 1),
 			'ActivityArray': selectArray,
 		}
 	}
-
 	function checkOK() {
-		if (!isNaN(ThemeCategory.ActivityPrimaryThemeId) && ThemeCategory.ActivityTypeId !== -1 && (!!ThemeCategory.ActivityTypeId || ThemeCategory.ActivityTypeId == 0)) {
+		if (!isNaN(ThemeCategory.ActivityPrimaryThemeId) && ThemeCategory.ActivityTypeId !== -1 && !!ThemeCategory.ActivityTypeId) {
 			return true
 		}
 		else {
 			return false
 		}
 	}
-
-
 	function createThemeCard(name, icon, index) {
 		var div = document.createElement('div'),
 			input = document.createElement('input'),
@@ -148,7 +148,7 @@
 		div.classList.add('col', 'text-center', 'py-3')
 		input.classList.add('btn-check', 'themeInput')
 		i.classList.add('bi', 'd-block', 'iconBig', icon)
-		label.classList.add('btn', 'btn-lg', 'btn-outline-info', 'w-100', 'p-2', 'typeLabel')
+		label.classList.add('btn', 'btn-lg', 'btn-outline-info', 'w-100', 'p-2')
 		span.classList.add('m-0')
 		span.innerText = name
 		input.type = 'checkbox'
@@ -160,7 +160,7 @@
 		div.appendChild(label)
 		input.addEventListener("click", function () {
 			if (input.checked) {
-				if (selectArray.length < 2) { selectArray.push(input.id) }
+				if (selectArray.length < 2) { selectArray.push(parseInt(input.id)) }
 				else { input.checked = false }
 			} else { selectArray.splice(input.value, 1) }
 			ThemeCategory = GatObject()
@@ -176,7 +176,7 @@
 		div.classList.add('col', 'text-center', 'py-3')
 		input.classList.add('btn-check', 'typeInput')
 		i.classList.add('bi', 'd-block', 'iconBig', icon)
-		label.classList.add('btn', 'btn-lg', 'btn-outline-info', 'w-100', 'p-2', 'typeLabel')
+		label.classList.add('btn', 'btn-lg', 'btn-outline-info', 'w-100', 'p-2')
 		span.classList.add('m-0')
 		span.innerText = name
 		input.type = 'radio'
@@ -204,7 +204,7 @@
 				}
 			}
 		})
-		typeInput[ThemeCategory.ActivityTypeId].checked = true
+		typeInput[ThemeCategory.ActivityTypeId - 1].checked = true
 	}
 
 	document.getElementById("backPageBtn").addEventListener("click", function () {
