@@ -22,267 +22,274 @@
 			</div>
 		</div>
 	</div>
+
 	<div id="ActivityInfo" class="container align-content-center">
+		<input type="hidden" name="ActivityDraftId" value="@ViewData[" ActivityDraftId"]" />
 		<div class="row justify-content-center">
 			<div class="col-6 col-lg-3 mb-3 text-center">
 				<div class="card bg-dark imgBtn">
-					<img class="card-img showImg">
+					<img class="card-img showImg" src="@Model.Image">
 					<div class="card-img-overlay p-0">
-						<input id="actImg" type='file' class="h-100 w-100" accept="image/png, image/jpeg" ">
+						<input id="actImg" type='file' class="h-100 w-100" accept="image/png, image/jpeg">
 					</div>
 				</div>
-				<div class=" form-text m-0 mt-2">上傳活動照片
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-12 col-lg-6">
-					<div class="mb-3 text-center">
-						<label for="orgName" class="form-label d-block">主辦單位名稱</label>
-						<label id="orgName">userName</label>
-					</div>
-					<div class="mb-3">
-						<label for="activityName" class="form-label star">活動名稱</label>
-						<input type="text" class="form-control" id="activityName" v-model="ActivityInfo.ActivityName">
-					</div>
-					<div class="mb-3">
-						<div class="row">
-							<label class="form-label star">活動時間</label>
-							<label for="activityStartDate" class="form-text">開始時間</label>
-						</div>
-						<div class="row">
-							<div class="col-sm">
-								<input type="date" class="form-control" id="activityStartDate"
-									v-model="ActivityInfo.StartDate">
-							</div>
-							<div class="col-sm">
-								<input type="time" class="form-control" id="activityStartTime"
-									v-model="ActivityInfo.StartTime">
-							</div>
-							<label for="activityEndDate" class="form-text">結束時間</label>
-						</div>
-						<div class="row mb-3">
-							<div class="col-sm ">
-								<input type="date" class="form-control" id="activityEndDate"
-									v-model="ActivityInfo.EndDate">
-							</div>
-							<div class="col-sm ">
-								<input type="time" class="form-control" id="activityEndTime"
-									v-model="ActivityInfo.EndTime">
-							</div>
-						</div>
-						<div class="mb-3 ">
-							<label for="activityTag" class="form-label">活動標籤</label>
-							<div class="form-text m-0">為活動設定標籤讓使用者更容易找到你，上限五個。</div>
-							<label class="mb-3 bg-light w-100 py-2 align-items-center border-1 border-info" for="activityTag">
-								<span class="row align-items-center justify-content-between">
-									<div id="tagInput" class="col-12">
-										<input type="text" class="border-0 mx-3" id="activityTag" maxlength="20">
-									</div>
-								</span>
-							</label>
-						</div>
-						<div class="mb-3">
-							<label for="ActivityRefWebUrl" class="form-label">參考網站</label>
-							<input type="url" class="form-control" id="ActivityRefWebUrl"
-								placeholder="https://www.google.com.tw/" v-model="ActivityInfo.ActivityRefWebUrl">
-							<div class="form-text m-0">加上參考網站如 Facebook 或 Instagram，讓使用者更認識你</div>
-							<input type="text" class="form-control mb-2" id="RefWebDescription"
-								placeholder="參考網站描述，20字內" maxlength="20" v-model="ActivityInfo.RefWebDescription">
-						</div>
-						<div class="mb-3">
-							<label for="activityform" class="form-label star">活動形式</label>
-							<div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-								<input type="radio" class="btn-check form-control" id="online" autocomplete="off"
-									data-bs-toggle="collapse" data-bs-target="#online" aria-controls="online">
-								<label class="btn btn-outline-primary onlineLab" for="online">線上活動</label>
-								<input type="radio" class="btn-check form-control" id="offline" autocomplete="off"
-									data-bs-toggle="collapse" data-bs-target="#offline" aria-controls="offline">
-								<label class="btn btn-outline-primary offlineLab" for="offline">線下活動</label>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="collapse onlineCard " id="online">
-								<div class="card card-body">
-									<div class="mb-3">
-										<label for="StreamingWeb" class="form-label">嵌入 Youtube 影片連結</label>
-										<input type="url" class="form-control mb-2" id="StreamingWeb"
-											placeholder="請輸入 Youtube 直播網址" v-model="ActivityInfo.StreamingWeb">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="collapse offlineCard" id="offline">
-								<div class="card card-body">
-									<div class="row mb-3">
-										<div class="col-6">
-											<select id="citySelect" class="form-select"
-												aria-label="Default select example"
-												v-model="ActivityInfo.City"></select>
-										</div>
-										<div class="col-6">
-											<select id="districtSelect" class="form-select"
-												aria-label="Default select example"
-												v-model="ActivityInfo.District"></select>
-										</div>
-									</div>
-									<div class="form-text m-0">詳細地址 </div>
-									<input type="text" class="form-control mb-2" id="Address"
-										v-model="ActivityInfo.Address">
-									<div class="form-text m-0">補充說明 </div>
-									<input type="text" class="form-control mb-2" id="AddressDetail"
-										v-model="ActivityInfo.AddressDetail">
-								</div>
-							</div>
-						</div>
-					</div>
-					<button id="sumBtn" type="button" class="btn btn-primary w-100">送出</button>
+				<div class=" form-text m-0 mt-2">
+					上傳活動照片
 				</div>
 			</div>
 		</div>
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-6">
+				<div class="mb-3 text-center">
+					<h2 class="form-label d-block">主辦單位名稱</h2>
+					<h3 id="orgName">@ViewData["OrgName"].ToString()</h3>
+				</div>
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-			crossorigin="anonymous"></script>
-		<script src="./imgSystem.js"></script>
-		<script src="./CitySelectSystem.js"></script>
+				<div class="mb-3">
+					<label for="activityName" class="form-label star">活動名稱</label>
+					<input type="text" class="form-control" id="activityName" name="activityName" value="@Model.ActivityName"
+						required>
+				</div>
+
+				<div class="mb-3">
+					<div class="row">
+						<label class="form-label star">活動時間</label>
+						<label for="activityStartDate" class="form-text">開始時間</label>
+					</div>
+					<div class="row">
+						<div class="col-sm">
+							<input type="date" class="form-control" id="activityStartDate" name="activityStartDate"
+								value="@Model.StartDate" required>
+						</div>
+						<div class="col-sm">
+							<input type="time" class="form-control" id="activityStartTime" name="activityStartTime"
+								value="@Model.StartTime" required>
+						</div>
+						<label for="activityEndDate" class="form-text">結束時間</label>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm ">
+							<input type="date" class="form-control" id="activityEndDate" name="activityEndDate" value="@Model.EndDate"
+								required>
+						</div>
+						<div class="col-sm ">
+							<input type="time" class="form-control" id="activityEndTime" name="activityEndTime" value="@Model.EndTime"
+								required>
+						</div>
+					</div>
+					<div class="mb-3 ">
+						<label for="activityTag" class="form-label">活動標籤</label>
+						<div class="form-text m-0">為活動設定標籤讓使用者更容易找到你，上限五個。</div>
+						<label class=" w-100 p-2 align-items-center border border-1 border-secondary" for="activityTag">
+							<span class="align-items-center justify-content-between">
+								<span id="tagInput" class="row">
+									@foreach (var tag in Model.Tag)
+									{
+									<span class="visually-hidden" id="hiddenSpan">@tag</span>
+									}
+									<input type="text" class=" border-0 col-2" id="activityTag" name="activityTag" maxlength="20">
+								</span>
+							</span>
+						</label>
+					</div>
+					<div class="mb-3">
+						<label for="ActivityRefWebUrl" class="form-label">參考網站</label>
+						<input type="url" class="form-control" id="ActivityRefWebUrl" placeholder="https://www.google.com.tw/"
+							name="ActivityRefWebUrl" value="@Model.ActivityRefWebUrl">
+						<div class="form-text m-0">加上參考網站如 Facebook 或 Instagram，讓使用者更認識你</div>
+						<input type="text" class="form-control mb-2" id="RefWebDescription" placeholder="參考網站描述，20字內" maxlength="20"
+							name="RefWebDescription" value="@Model.RefWebDescription">
+					</div>
+					<div class="mb-3">
+						<label for="activityform" class="form-label star">活動形式</label>
+						<div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+							<input type="radio" class="btn-check form-control" id="online" autocomplete="off"
+								data-bs-toggle="collapse" data-bs-target="#online" aria-controls="online">
+							<label class="btn btn-outline-primary onlineLab" for="online">線上活動</label>
+							<input type="radio" class="btn-check form-control" id="offline" autocomplete="off"
+								data-bs-toggle="collapse" data-bs-target="#offline" aria-controls="offline">
+							<label class="btn btn-outline-primary offlineLab" for="offline">線下活動</label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="collapse onlineCard" id="online">
+							<div class="card card-body">
+								<div class="mb-3">
+									<label for="StreamingWeb" class="form-label">嵌入 Youtube 影片連結</label>
+									<input type="url" class="form-control mb-2" id="StreamingWeb" placeholder="請輸入 Youtube 直播網址"
+										name="StreamingWeb" value="@Model.StreamingWeb">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="collapse offlineCard" id="offline">
+							<div class="card card-body">
+								<div class="row mb-3">
+									<div class="col-6">
+										<span id="spanCity" class="visually-hidden">@Model.City</span>
+										<select id="citySelect" class="form-select" aria-label="Default select example"
+											name="citySelect"></select>
+									</div>
+									<div class="col-6">
+										<span id="spanDistrict" class="visually-hidden">@Model.District</span>
+										<select id="districtSelect" class="form-select" aria-label="Default select example"
+											name="districtSelect"></select>
+									</div>
+								</div>
+								<div class="form-text m-0">詳細地址 </div>
+								<input type="text" class="form-control mb-2" id="Address" name="Address" value="@Model.Address">
+								<div class="form-text m-0">補充說明 </div>
+								<input type="text" class="form-control mb-2" id="AddressDetail" name="AddressDetail"
+									value="@Model.AddressDetail">
+							</div>
+						</div>
+					</div>
+				</div>
+				<button id="sumBtn" type="submit" class="btn bg-light w-100">下一步</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<!-- <script src="./imgSystem.js"></script>
+		<script src="./CitySelectSystem.js"></script> -->
 
 
-		<script>
-			const activityName = document.querySelector('#activityName'),
-				activityStartDate = document.querySelector('#activityStartDate'),
-				activityStartTime = document.querySelector('#activityStartTime'),
-				activityEndDate = document.querySelector('#activityEndDate'),
-				activityEndTime = document.querySelector('#activityEndTime'),
-				activityTag = document.querySelector('#activityTag'),
-				activityShortURL = document.querySelector('#activityShortURL'),
-				ActivityRefWebUrl = document.querySelector('#ActivityRefWebUrl'),
-				RefWebDescription = document.querySelector('#RefWebDescription'),
-				citySelect = document.querySelector('#citySelect'),
-				districtSelect = document.querySelector('#districtSelect'),
-				offline = document.querySelector('#offline'),
-				online = document.querySelector('#online'),
-				StreamingWeb = document.querySelector('#StreamingWeb'),
-				Address = document.querySelector('#Address'),
-				AddressDetail = document.querySelector('#AddressDetail'),
-				onlineCard = document.querySelector('.onlineCard'),
-				offlineCard = document.querySelector('.offlineCard'),
-				onlineLab = document.querySelector('.onlineLab'),
-				offlineLab = document.querySelector('.offlineLab');
-			const submitBtn = document.querySelector('#sumBtn')
+	<script>
+		const activityName = document.querySelector('#activityName'),
+			activityStartDate = document.querySelector('#activityStartDate'),
+			activityStartTime = document.querySelector('#activityStartTime'),
+			activityEndDate = document.querySelector('#activityEndDate'),
+			activityEndTime = document.querySelector('#activityEndTime'),
+			activityTag = document.querySelector('#activityTag'),
+			activityShortURL = document.querySelector('#activityShortURL'),
+			ActivityRefWebUrl = document.querySelector('#ActivityRefWebUrl'),
+			RefWebDescription = document.querySelector('#RefWebDescription'),
+			citySelect = document.querySelector('#citySelect'),
+			districtSelect = document.querySelector('#districtSelect'),
+			offline = document.querySelector('#offline'),
+			online = document.querySelector('#online'),
+			StreamingWeb = document.querySelector('#StreamingWeb'),
+			Address = document.querySelector('#Address'),
+			AddressDetail = document.querySelector('#AddressDetail'),
+			onlineCard = document.querySelector('.onlineCard'),
+			offlineCard = document.querySelector('.offlineCard'),
+			onlineLab = document.querySelector('.onlineLab'),
+			offlineLab = document.querySelector('.offlineLab');
+		const submitBtn = document.querySelector('#sumBtn')
 
-			let tagInput = document.querySelector('#tagInput')
-			let TagArray = []
-			let ActivityInfo = {}
-			activityTag.addEventListener("keyup", function (event) {
-				if (event.keyCode === 13) {
-					let inputString = activityTag.value.trim()
-					if (inputString != '') {
-						CreateSpan(inputString)
-					}
-					activityTag.value = ''
-					inputString = ''
+		let tagInput = document.querySelector('#tagInput')
+		let TagArray = []
+		let ActivityInfo = {}
+		activityTag.addEventListener("keyup", function (event) {
+			if (event.keyCode === 13) {
+				let inputString = activityTag.value.trim()
+				if (inputString != '') {
+					CreateSpan(inputString)
 				}
-			})
+				activityTag.value = ''
+				inputString = ''
+			}
+		})
 
-			function CreateSpan(string) {
-				let span = document.createElement('span')
-				let btn = document.createElement('button')
-				span.innerText = string
-				span.classList.add('btn', 'btn-info', 'mx-2')
-				span.setAttribute('id', 'spanInput')
-				btn.classList.add('btn-close')
-				btn.classList.add('p-2')
-				btn.setAttribute('aria-label', 'Close')
-				span.append(btn)
-				tagInput.append(span)
-				span.addEventListener('click', function () {
-					TagArray.splice(TagArray.indexOf(this.innerText), 1)
-					span = tagInput.removeChild(this)
-					CheckTagArray()
-				})
-				TagArray.push(`${string.toString()}`)
+		function CreateSpan(string) {
+			let span = document.createElement('span')
+			let btn = document.createElement('button')
+			span.innerText = string
+			span.classList.add('btn', 'btn-info', 'mx-2')
+			span.setAttribute('id', 'spanInput')
+			btn.classList.add('btn-close')
+			btn.classList.add('p-2')
+			btn.setAttribute('aria-label', 'Close')
+			span.append(btn)
+			tagInput.append(span)
+			span.addEventListener('click', function () {
+				TagArray.splice(TagArray.indexOf(this.innerText), 1)
+				span = tagInput.removeChild(this)
 				CheckTagArray()
-			}
-
-			function CheckTagArray() {
-				if (TagArray.length == 5) {
-					activityTag.disabled = true
-					activityTag.classList.add('visually-hidden')
-				} else {
-					activityTag.disabled = false
-					activityTag.classList.remove('visually-hidden')
-				}
-			}
-
-			function GatObject() {
-				return {
-					"ActivityDraftId": 1,
-					"ActivityName": activityName.value,
-					"Image": "https://i.imgur.com/JmwfFko.png",
-					"StartDate": activityStartDate.value,
-					"StartTime": activityStartTime.value,
-					"EndDate": activityEndDate.value,
-					"EndTime": activityEndTime.value,
-					"Tag": TagArray,
-					"ActivityRefWebUrl": ActivityRefWebUrl.value,
-					"RefWebDescription": RefWebDescription.value,
-					"City": citySelect.value,
-					"District": districtSelect.value,
-					"Address": Address.value,
-					"AddressDetail": AddressDetail.value,
-					"StreamingWeb": StreamingWeb.value,
-				}
-			}
-
-			online.addEventListener('click', function () {
-				onlineLab.classList.add('disabled')
-				offlineLab.classList.remove('disabled')
-				offlineCard.classList.remove('show')
-				StreamingWeb.disabled = false
-				StreamingWeb.required = true
-				citySelect.required = false
-				districtSelect.required = false
 			})
-			offline.addEventListener('click', function () {
-				offlineLab.classList.add('disabled')
-				onlineLab.classList.remove('disabled')
-				onlineCard.classList.remove('show')
-				StreamingWeb.disabled = true
-				StreamingWeb.required = false
-				citySelect.required = true
-				districtSelect.required = true
-			})
-		</script>
+			TagArray.push(`${string.toString()}`)
+			CheckTagArray()
+		}
 
-		<script>
-			// let ActivityInfoApp = new Vue({
-			// 	el: '#ActivityInfo',
-			// 	data: {
-			// 		ActivityInfo: {
-			// 			ActivityDraftId: 1,
-			// 			ActivityName: '',
-			// 			Image: '',
-			// 			StartDate: '',
-			// 			StartTime: '',
-			// 			EndDate: '',
-			// 			EndTime: '',
-			// 			Tag: [],
-			// 			ActivityRefWebUrl: '',
-			// 			RefWebDescription: '',
-			// 			City: '',
-			// 			District: '',
-			// 			Address: '',
-			// 			AddressDetail: '',
-			// 			StreamingWeb: '',
-			// 		}
-			// 	},
-			// 	methods: {
+		function CheckTagArray() {
+			if (TagArray.length == 5) {
+				activityTag.disabled = true
+				activityTag.classList.add('visually-hidden')
+			} else {
+				activityTag.disabled = false
+				activityTag.classList.remove('visually-hidden')
+			}
+		}
 
-			// 	}
-			// })
-		</script>
+		function GatObject() {
+			return {
+				"ActivityDraftId": 1,
+				"ActivityName": activityName.value,
+				"Image": "https://i.imgur.com/JmwfFko.png",
+				"StartDate": activityStartDate.value,
+				"StartTime": activityStartTime.value,
+				"EndDate": activityEndDate.value,
+				"EndTime": activityEndTime.value,
+				"Tag": TagArray,
+				"ActivityRefWebUrl": ActivityRefWebUrl.value,
+				"RefWebDescription": RefWebDescription.value,
+				"City": citySelect.value,
+				"District": districtSelect.value,
+				"Address": Address.value,
+				"AddressDetail": AddressDetail.value,
+				"StreamingWeb": StreamingWeb.value,
+			}
+		}
+
+		online.addEventListener('click', function () {
+			onlineLab.classList.add('disabled')
+			offlineLab.classList.remove('disabled')
+			offlineCard.classList.remove('show')
+			StreamingWeb.disabled = false
+			StreamingWeb.required = true
+			citySelect.required = false
+			districtSelect.required = false
+		})
+		offline.addEventListener('click', function () {
+			offlineLab.classList.add('disabled')
+			onlineLab.classList.remove('disabled')
+			onlineCard.classList.remove('show')
+			StreamingWeb.disabled = true
+			StreamingWeb.required = false
+			citySelect.required = true
+			districtSelect.required = true
+		})
+	</script>
+
+	<script>
+		let ActivityInfoCheck = new Vue({
+			el: '#ActivityInfo',
+			data: {
+				ActivityInfo: {
+					ActivityName: '', //活動名稱
+					Image: '', //圖片
+					StartDate: '', //開始日期
+					StartTime: '', //開始時間
+					EndDate: '', //結束日期
+					EndTime: '', //結束時間
+					ActivityRefWebUrl: '', //活動參考網址
+					City: '', //城市
+					District: '', //區域
+					Address: '', //地址
+					AddressDetail: '', //地址補充說明
+					StreamingWeb: '', //直播網址
+				}
+			},
+			methods: {
+
+			}
+		})
+	</script>
 </body>
 
 </html>

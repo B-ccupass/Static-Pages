@@ -16,73 +16,89 @@
 	<main>
 		<div class="container my-5 align-content-center">
 			<div class="row justify-content-center text-center">
-				<div class="col-6 my-3">
+				<div class="col-12 col-lg-6 my-3">
 					<h1>同意使用者條款</h1>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-6 border border-3 overflow-auto Lorm-H">
+				<div class="col-8 col-lg-6 border border-3 overflow-auto Lorm-H">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam autem error possimus iure sapiente
 					velit
 					corrupti mollitia natus facere, doloremque nam esse voluptas voluptate explicabo aspernatur non rem
 					nulla ullam.
 					Blanditiis nisi dolore pariatur harum ratione. Laboriosam magnam tempore nostrum quam aut voluptatem
 					labore reprehenderit officia amet deserunt adipisci quod natus repellat sit, dignissimos incidunt.
+					Dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam autem error possimus iure
+					sapiente
+					velit
+					corrupti mollitia natus facere, doloremque nam esse voluptas voluptate explicabo aspernatur non rem
+					nulla ullam.
+					Blanditiis nisi dolore pariatur harum ratione. Laboriosam magnam tempore nostrum quam aut voluptatem
+					labore reprehenderit officia amet deserunt adipisci quod natus repellat sit, dignissimos incidunt.
 					Dolor
-					doloribus magni labore aperiam!
-					Doloribus error tempora, inventore ipsa, sed est rerum, expedita optio illo eum a. Quo nobis hic eum
-					odit voluptate reprehenderit, vel consequatur impedit, ipsam distinctio obcaecati, iusto sunt amet
-					culpa.
-					Sequi repellat quae voluptates inventore veritatis, iure assumenda laboriosam voluptate unde
-					reiciendis,
-					pariatur quas. Repellat est praesentium sapiente commodi earum. Accusantium recusandae laudantium
-					impedit, ipsam ad iusto consequuntur neque molestiae.
-					Saepe hic velit voluptatem dolorem a, quasi reprehenderit perspiciatis facilis deserunt ex autem
-					nihil
-					quas culpa cupiditate praesentium nobis ipsum repudiandae aliquid? Expedita sit accusamus ab
-					voluptas
-					deserunt dolore quod.
-					Optio, quisquam eligendi? Illo minus quis dolorem illum earum modi obcaecati mollitia repudiandae
-					facere, labore laudantium voluptate quod tenetur ipsum sapiente distinctio ab id optio facilis
-					praesentium! Voluptates, alias ad!
-					Nisi vel et ipsum blanditiis a sunt temporibus fugiat eius qui optio quae minima ad accusamus
-					dolorum
-					eos id, voluptatibus aliquid sapiente praesentium dolorem amet beatae laborum dolor delectus. Eaque.
-					Delectus dignissimos quae ea nam non necessitatibus dolorem, expedita reiciendis? Recusandae at
-					minus
-					magnam quas nam quis distinctio consectetur et vel quia ratione, quidem quos, nemo inventore.
-					Similique,
-					hic debitis!
-					Mollitia eius quam dicta cumque atque dolorum beatae fuga rem, magni nam magnam eos suscipit harum
-					dignissimos aperiam minima reiciendis molestias ex laboriosam explicabo ipsum numquam quis. Minima,
-					eius! Voluptatibus?
-					Fugiat magnam beatae ea, sint eos laudantium veritatis perspiciatis illum impedit minus placeat
-					veniam
-					culpa itaque repudiandae, expedita recusandae cumque sunt excepturi aperiam autem! Nihil voluptates
-					voluptatem itaque fugiat quidem?
 				</div>
 			</div>
 			<div class="row my-3 justify-content-center">
-				<div class="form-check col-6 p-1 text-center">
-					<input class="form-check-input" type="checkbox" id="checkOk" name="PolicyIsOk">
+				<div class="form-check col-8 col-lg-6 p-1 text-center">
+					<input class="form-check-input" type="checkbox" id="checkOk" v-model="check">
 					<label class="form-check-label fs-5" for="checkOk"> 我已同意上述條款</label>
 					<hr>
 				</div>
 			</div>
 			<div class="row my-3 justify-content-center">
-				<div class="col-3 p-1 text-start">
-					<a class="btn btn-success btn-lg">返回主辦中心</a>
-				</div>
-				<div class="col-3 p-1 text-end">
-					<a id="nextPaggeBtn" class="btn btn-primary btn-lg ">下一步</a>
+				<div class="col-8 col-lg-6">
+					<div class="row justify-content-between">
+						<div class="col-6 p-1 text-start">
+							<a href="#" class="btn btn-success btn-lg w-100 h-100">返回主辦中心</a>
+						</div>
+						<div class="col-6 p-1 text-end">
+							<button id="nextPaggeBtn" type="submit" class="btn btn-primary btn-lg w-100 h-100" v-on:click="consent"
+								:disabled="isOk">下一步</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	</main>
 </body>
 
-<script src="./Policy.js"></script>
+<!-- <script src="./Policy.js"></script> -->
+
+<script>
+	let checkOkc = new Vue({
+		el: '.container',
+		data: {
+			isOk: true,
+			check: false,
+		},
+		watch: {
+			check: {
+				immediate: true,
+				handler() {
+					if (this.check) {
+						this.isOk = false
+					} else {
+						this.isOk = true
+					}
+				}
+			}
+		},
+		methods: {
+			consent() {
+				try {
+					fetch(`/CreateActivity/SelectOrg/`, { method: 'GET' })
+						.then(res => location.assign(res.url))
+				}
+				catch (e) {
+					console.warn(e)
+				}
+			}
+		},
+	})
+</script>
+
 </html>
