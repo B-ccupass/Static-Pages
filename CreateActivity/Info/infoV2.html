@@ -22,9 +22,8 @@
 			</div>
 		</div>
 	</div>
-
 	<div id="ActivityInfo" class="container align-content-center">
-		<input type="hidden" name="ActivityDraftId" value="@ViewData[" ActivityDraftId"]" />
+		<input type="hidden" name="ActivityDraftId" value='@ViewData["ActivityDraftId"]' />
 		<div class="row justify-content-center">
 			<div class="col-6 col-lg-3 mb-3 text-center">
 				<div class="card bg-dark imgBtn">
@@ -44,38 +43,40 @@
 					<h2 class="form-label d-block">主辦單位名稱</h2>
 					<h3 id="orgName">@ViewData["OrgName"].ToString()</h3>
 				</div>
-
 				<div class="mb-3">
 					<label for="activityName" class="form-label star">活動名稱</label>
 					<input type="text" class="form-control" id="activityName" name="activityName" value="@Model.ActivityName"
-						required>
+						v-model="name">
+					<span class="text-danger">{{InfoCheck.NameErMsg}}</span>
 				</div>
-
 				<div class="mb-3">
 					<div class="row">
 						<label class="form-label star">活動時間</label>
-						<label for="activityStartDate" class="form-text">開始時間</label>
 					</div>
 					<div class="row">
+						<label for="activityStartDate" class="form-text">開始時間</label>
 						<div class="col-sm">
 							<input type="date" class="form-control" id="activityStartDate" name="activityStartDate"
-								value="@Model.StartDate" required>
+								value="@Model.StartDate" v-model="StartDate">
 						</div>
 						<div class="col-sm">
 							<input type="time" class="form-control" id="activityStartTime" name="activityStartTime"
-								value="@Model.StartTime" required>
+								value="@Model.StartTime" v-model="StartTime">
 						</div>
-						<label for="activityEndDate" class="form-text">結束時間</label>
 					</div>
 					<div class="row mb-3">
+						<label for="activityEndDate" class="form-text">結束時間</label>
 						<div class="col-sm ">
 							<input type="date" class="form-control" id="activityEndDate" name="activityEndDate" value="@Model.EndDate"
-								required>
+								v-model="EndDate">
+							<span class="text-danger">{{InfoCheck.DateErMsg}}</span>
 						</div>
 						<div class="col-sm ">
 							<input type="time" class="form-control" id="activityEndTime" name="activityEndTime" value="@Model.EndTime"
-								required>
+								v-model="EndTime">
+							<span class="text-danger">{{InfoCheck.TimeErMsg}}</span>
 						</div>
+
 					</div>
 					<div class="mb-3 ">
 						<label for="activityTag" class="form-label">活動標籤</label>
@@ -95,69 +96,68 @@
 					<div class="mb-3">
 						<label for="ActivityRefWebUrl" class="form-label">參考網站</label>
 						<input type="url" class="form-control" id="ActivityRefWebUrl" placeholder="https://www.google.com.tw/"
-							name="ActivityRefWebUrl" value="@Model.ActivityRefWebUrl">
+							v-model="ActivityRefWebUrl" name="ActivityRefWebUrl" value="@Model.ActivityRefWebUrl">
+						<span class="text-danger">{{InfoCheck.RefWebUrlErMsg}}</span>
+
 						<div class="form-text m-0">加上參考網站如 Facebook 或 Instagram，讓使用者更認識你</div>
 						<input type="text" class="form-control mb-2" id="RefWebDescription" placeholder="參考網站描述，20字內" maxlength="20"
 							name="RefWebDescription" value="@Model.RefWebDescription">
 					</div>
 					<div class="mb-3">
 						<label for="activityform" class="form-label star">活動形式</label>
-						<div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-							<input type="radio" class="btn-check form-control" id="online" autocomplete="off"
-								data-bs-toggle="collapse" data-bs-target="#online" aria-controls="online">
-							<label class="btn btn-outline-primary onlineLab" for="online">線上活動</label>
-							<input type="radio" class="btn-check form-control" id="offline" autocomplete="off"
-								data-bs-toggle="collapse" data-bs-target="#offline" aria-controls="offline">
-							<label class="btn btn-outline-primary offlineLab" for="offline">線下活動</label>
-						</div>
+						<input class="btn btn-primary w-100 d-block" v-model="typeBtnMsg" v-on:click="typeBtn" readonly></input>
 					</div>
-					<div class="col-12">
-						<div class="collapse onlineCard" id="online">
-							<div class="card card-body">
-								<div class="mb-3">
-									<label for="StreamingWeb" class="form-label">嵌入 Youtube 影片連結</label>
-									<input type="url" class="form-control mb-2" id="StreamingWeb" placeholder="請輸入 Youtube 直播網址"
-										name="StreamingWeb" value="@Model.StreamingWeb">
+				</div>
+				<div v-if="!isOnline" class="col-12">
+					<div class=" offlineCard" id="offline">
+						<div class="card card-body">
+							<div class="row mb-3">
+								<div class="col-6">
+									<span id="spanCity" class="visually-hidden">@Model.City</span>
+									<select id="citySelect" class="form-select" aria-label="Default select example" v-model="City"
+										name="citySelect"></select>
+									<span class="text-danger">{{InfoCheck.CityErMsg}}</span>
+								</div>
+								<div class="col-6">
+									<span id="spanDistrict" class="visually-hidden">@Model.District</span>
+									<select id="districtSelect" class="form-select" aria-label="Default select example" v-model="District"
+										name="districtSelect"></select>
+									<span class="text-danger">{{InfoCheck.DistrictErMsg}}</span>
 								</div>
 							</div>
+							<div class="form-text m-0">詳細地址 </div>
+							<input type="text" class="form-control" id="Address" name="Address" v-model="Address"
+								value="@Model.Address">
+							<span class="text-danger">{{InfoCheck.AddressErMsg}}</span>
+							<div class="form-text m-0">補充說明 </div>
+							<input type="text" class="form-control mb-2" id="AddressDetail" name="AddressDetail"
+								value="@Model.AddressDetail">
 						</div>
 					</div>
-					<div class="col-12">
-						<div class="collapse offlineCard" id="offline">
-							<div class="card card-body">
-								<div class="row mb-3">
-									<div class="col-6">
-										<span id="spanCity" class="visually-hidden">@Model.City</span>
-										<select id="citySelect" class="form-select" aria-label="Default select example"
-											name="citySelect"></select>
-									</div>
-									<div class="col-6">
-										<span id="spanDistrict" class="visually-hidden">@Model.District</span>
-										<select id="districtSelect" class="form-select" aria-label="Default select example"
-											name="districtSelect"></select>
-									</div>
-								</div>
-								<div class="form-text m-0">詳細地址 </div>
-								<input type="text" class="form-control mb-2" id="Address" name="Address" value="@Model.Address">
-								<div class="form-text m-0">補充說明 </div>
-								<input type="text" class="form-control mb-2" id="AddressDetail" name="AddressDetail"
-									value="@Model.AddressDetail">
+				</div>
+				<div v-else class="col-12">
+					<div class=" onlineCard" id="online">
+						<div class="card card-body">
+							<div class="mb-3">
+								<label for="StreamingWeb" class="form-label">嵌入 Youtube 影片連結</label>
+								<input type="url" class="form-control mb-2" id="StreamingWeb" placeholder="請輸入 Youtube 直播網址"
+									v-model="StreamingWeb" name="StreamingWeb" value="@Model.StreamingWeb">
+								<span class="text-danger">{{InfoCheck.StreamingWebErMsg}}</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<button id="sumBtn" type="submit" class="btn bg-light w-100">下一步</button>
 			</div>
+			<button id="sumBtn" :disabled="!allOKBtn" type="submit" class="btn bg-light w-100">下一步</button>
 		</div>
+	</div>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-	<!-- <script src="./imgSystem.js"></script>
-		<script src="./CitySelectSystem.js"></script> -->
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="./CitySelectSystem.js"></script>
 
 	<script>
 		const activityName = document.querySelector('#activityName'),
@@ -175,13 +175,8 @@
 			online = document.querySelector('#online'),
 			StreamingWeb = document.querySelector('#StreamingWeb'),
 			Address = document.querySelector('#Address'),
-			AddressDetail = document.querySelector('#AddressDetail'),
-			onlineCard = document.querySelector('.onlineCard'),
-			offlineCard = document.querySelector('.offlineCard'),
-			onlineLab = document.querySelector('.onlineLab'),
-			offlineLab = document.querySelector('.offlineLab');
+			AddressDetail = document.querySelector('#AddressDetail')
 		const submitBtn = document.querySelector('#sumBtn')
-
 		let tagInput = document.querySelector('#tagInput')
 		let TagArray = []
 		let ActivityInfo = {}
@@ -195,7 +190,6 @@
 				inputString = ''
 			}
 		})
-
 		function CreateSpan(string) {
 			let span = document.createElement('span')
 			let btn = document.createElement('button')
@@ -215,7 +209,6 @@
 			TagArray.push(`${string.toString()}`)
 			CheckTagArray()
 		}
-
 		function CheckTagArray() {
 			if (TagArray.length == 5) {
 				activityTag.disabled = true
@@ -225,7 +218,6 @@
 				activityTag.classList.remove('visually-hidden')
 			}
 		}
-
 		function GatObject() {
 			return {
 				"ActivityDraftId": 1,
@@ -245,50 +237,226 @@
 				"StreamingWeb": StreamingWeb.value,
 			}
 		}
-
-		online.addEventListener('click', function () {
-			onlineLab.classList.add('disabled')
-			offlineLab.classList.remove('disabled')
-			offlineCard.classList.remove('show')
-			StreamingWeb.disabled = false
-			StreamingWeb.required = true
-			citySelect.required = false
-			districtSelect.required = false
-		})
-		offline.addEventListener('click', function () {
-			offlineLab.classList.add('disabled')
-			onlineLab.classList.remove('disabled')
-			onlineCard.classList.remove('show')
-			StreamingWeb.disabled = true
-			StreamingWeb.required = false
-			citySelect.required = true
-			districtSelect.required = true
-		})
 	</script>
-
 	<script>
 		let ActivityInfoCheck = new Vue({
 			el: '#ActivityInfo',
 			data: {
-				ActivityInfo: {
-					ActivityName: '', //活動名稱
-					Image: '', //圖片
-					StartDate: '', //開始日期
-					StartTime: '', //開始時間
-					EndDate: '', //結束日期
-					EndTime: '', //結束時間
-					ActivityRefWebUrl: '', //活動參考網址
-					City: '', //城市
-					District: '', //區域
-					Address: '', //地址
-					AddressDetail: '', //地址補充說明
-					StreamingWeb: '', //直播網址
-				}
+				name: '', //活動名稱
+				Image: '', //圖片
+				StartDate: new Date().toISOString().split('T')[0], //開始日期
+				StartTime: `${new Date().getHours()}:${String(new Date().getMinutes() + 1).padStart(2, '0')}`, //開始時間
+				EndDate: '', //結束日期
+				EndTime: '', //結束時間
+				ActivityRefWebUrl: '', //活動參考網址
+				City: '', //城市
+				District: '', //區域
+				Address: '', //地址
+				AddressDetail: '', //地址補充說明
+				StreamingWeb: '', //直播網址
+				StartDateTime: '',
+				EndDateTime: '',
+				InfoCheck: {
+					NameEr: false,
+					NameErMsg: '',
+					ImageEr: false,
+					ImageErMsg: '',
+					DateEr: false,
+					TimeEr: false,
+					DateErMsg: '',
+					TimeErMsg: '',
+					RefWebUrlEr: false,
+					RefWebUrlErMsg: '',
+					CityEr: false,
+					CityErMsg: '',
+					DistrictEr: false,
+					DistrictErMsg: '',
+					AddressEr: false,
+					AddressErMsg: '',
+					AddressDetailEr: false,
+					AddressDetailErMsg: '',
+					StreamingWebEr: false,
+					StreamingWebErMsg: '',
+				},
+				allOKBtn: false,
+				isOnline: false,
+				typeBtnMsg: '線下活動',
+			},
+			watch: {
+				name: {
+					immediate: true,
+					handler() {
+						if (this.name == '') {
+							this.InfoCheck.NameEr = true
+							this.InfoCheck.NameErMsg = '不可為空'
+						} else {
+							this.InfoCheck.NameEr = false
+							this.InfoCheck.NameErMsg = ''
+						}
+						this.checkVerify()
+					}
+				},
+				StartDate: {
+					immediate: true,
+					handler() {
+						this.timeCheck()
+					}
+				},
+				StartTime: {
+					immediate: true,
+					handler() {
+						this.timeCheck()
+					}
+				},
+				EndDate: {
+					immediate: true,
+					handler() {
+						this.timeCheck()
+					}
+				},
+				EndTime: {
+					immediate: true,
+					handler() {
+						this.timeCheck()
+					}
+				},
+				ActivityRefWebUrl: {
+					immediate: true,
+					handler() {
+						let regex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+						if (this.ActivityRefWebUrl == '') {
+							this.InfoCheck.RefWebUrlEr = false
+							this.InfoCheck.RefWebUrlErMsg = ''
+						} else if (!regex.test(this.ActivityRefWebUrl)) {
+							this.InfoCheck.RefWebUrlEr = true
+							this.InfoCheck.RefWebUrlErMsg = '網址格式不正確'
+						} else {
+							this.InfoCheck.RefWebUrlEr = false
+							this.InfoCheck.RefWebUrlErMsg = ''
+						}
+						this.checkVerify()
+					}
+				},
+				City: {
+					immediate: true,
+					handler() {
+						if (!this.isOnline) {
+							if (this.City == '') {
+								this.InfoCheck.CityEr = true
+								this.InfoCheck.CityErMsg = '必填'
+							} else {
+								this.InfoCheck.CityEr = false
+								this.InfoCheck.CityErMsg = ''
+							}
+							this.checkVerify()
+						}
+					}
+				},
+				District: {
+					immediate: true,
+					handler() {
+						if (!this.isOnline) {
+							if (this.District == '') {
+								this.InfoCheck.DistrictEr = true
+								this.InfoCheck.DistrictErMsg = '必填'
+							} else {
+								this.InfoCheck.DistrictEr = false
+								this.InfoCheck.DistrictErMsg = ''
+							}
+							this.checkVerify()
+						}
+					}
+				},
+				Address: {
+					immediate: true,
+					handler() {
+						if (!this.isOnline) {
+							if (this.Address == '') {
+								this.InfoCheck.AddressEr = true
+								this.InfoCheck.AddressErMsg = '必填'
+							} else {
+								this.InfoCheck.AddressEr = false
+								this.InfoCheck.AddressErMsg = ''
+							}
+							this.checkVerify()
+						}
+					}
+				},
+				StreamingWeb: {
+					immediate: true,
+					handler() {
+						if (this.isOnline) {
+							let regex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+							if (this.StreamingWeb == '') {
+								this.InfoCheck.StreamingWebEr = true
+								this.InfoCheck.StreamingWebErMsg = '必填'
+							} else if (!regex.test(this.StreamingWeb)) {
+								this.InfoCheck.StreamingWebEr = true
+								this.InfoCheck.StreamingWebErMsg = '網址格式不正確'
+							} else {
+								this.InfoCheck.StreamingWebEr = false
+								this.InfoCheck.StreamingWebErMsg = ''
+							}
+							this.checkVerify()
+						}
+
+					}
+				},
 			},
 			methods: {
-
-			}
+				timeCheck: function () {
+					let today = new Date().toISOString()
+					this.StartDateTime = new Date(`${this.StartDate} ${this.StartTime}`)
+					this.EndDateTime = new Date(`${this.EndDate} ${this.EndTime}`)
+					// if()
+					if (this.StartDate == '' || this.StartTime == '' || this.EndDate == '' || this.EndTime == '') {
+						this.InfoCheck.DateEr = true
+						this.InfoCheck.DateErMsg = '日期時間不可為空'
+					} else if (this.StartDateTime == this.EndDateTime || this.StartDateTime > this.EndDateTime || this.StartTime == this.EndTime) {
+						this.InfoCheck.DateEr = true
+						this.InfoCheck.DateErMsg = '結束時間不能小於開始時間'
+					} else {
+						this.InfoCheck.DateEr = false
+						this.InfoCheck.DateErMsg = ''
+					}
+					this.checkVerify()
+				},
+				checkVerify() {
+					for (let prop in this.inputDataCheck) {
+						if (this.inputDataCheck[prop] == true) {
+							this.allOKBtn = false
+							return
+						}
+						this.allOKBtn = true
+					}
+				},
+				typeBtn() {
+					if (this.isOnline) {
+						this.typeBtnMsg = '線下活動'
+						this.InfoCheck.StreamingWebEr = false
+						this.InfoCheck.StreamingWebErMsg = ''
+						this.InfoCheck.CityEr = true
+						this.InfoCheck.CityErMsg = '必填'
+						this.InfoCheck.DistrictEr = true
+						this.InfoCheck.DistrictErMsg = '必填'
+						this.InfoCheck.AddressEr = true
+						this.InfoCheck.AddressErMsg = '必填'
+					} else {
+						this.typeBtnMsg = '線上活動'
+						this.InfoCheck.StreamingWebEr = true
+						this.InfoCheck.StreamingWebErMsg = '必填'
+						this.InfoCheck.CityEr = false
+						this.InfoCheck.CityErMsg = ''
+						this.InfoCheck.DistrictEr = false
+						this.InfoCheck.DistrictErMsg = ''
+						this.InfoCheck.AddressEr = false
+						this.InfoCheck.AddressErMsg = ''
+					}
+					this.isOnline = !this.isOnline
+				}
+			},
 		})
+
 	</script>
 </body>
 

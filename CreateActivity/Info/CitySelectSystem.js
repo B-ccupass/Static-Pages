@@ -1,8 +1,6 @@
 const TaiwanUrl = 'https://raw.githubusercontent.com/LunAhEric/FileStorage/main/TaiwanAddress_Simple.json'
 let cityArray = []
 let districtArray = []
-
-
 window.onload = function () {
     getFetchData()
     citySelect.onchange = function () {
